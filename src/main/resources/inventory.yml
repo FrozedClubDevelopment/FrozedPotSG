@@ -1,0 +1,169 @@
+#
+# You must choose one of the following Inventory Sizes:
+# 9, 18, 27, 36, 45, 54
+#
+enabled: "&r  &a▶ &7Enabled"
+disabled: "&r  &c▶ &7Disabled"
+settings-inventory:
+  title: "&ePlayer Settings"
+  size: 9
+  name: "&6&l<name>"
+  # Available placeholders for 'info-status'
+  # <name> - This will show the name of the setting (i.e: ChestClick)
+  # <settings_status> - This will show either enabled or disabled
+  settings-line:
+    - "&8&m------------------------------"
+
+  info-status:
+  - "<settings_status>"
+
+  description:
+    chestclick:
+    - "&7If this is disabled you will not"
+    - "&7be able to break chest by"
+    - "&7left clicking it."
+    - " "
+
+    chest-auto-pickup:
+    - "&7If this is enabled all items when you"
+    - "&7left click the chest will go to"
+    - "&7your inventory automatically."
+    - " "
+
+    glass-border:
+    - "&7If this is enabled"
+    - "&7red glass will be spawned"
+    - "&7around border if you're close."
+    - " "
+
+    scoreboard:
+    - "&7If this is enabled you"
+    - "&7will be able get information"
+    - "&7from the scoreboards"
+    - " "
+
+    lightning-on-kill:
+    - "&7If this is enabled"
+    - "&7Lightning effect will show"
+    - "&7when you killed a player."
+    - " "
+  #
+  # points_lore will be linked to not-enough-points-lore if you don't have enough points, else will link to enough-points-lore.
+  #
+  not-enough-points-lore:
+  - " "
+  - "&7You don't have enough points."
+  - "&7This requires &e<required_points> &7points and"
+  - "&7you still require &e<needed_points> &7more!"
+
+leaderboard-inventory:
+  title: "&eLeaderboard"
+  name: "&6<name>"
+  empty-leaderboard:
+  - "&7&m-----------------------"
+  - "&eThis leaderboard is"
+  - "&ecurrently empty."
+  - "&7&m-----------------------"
+
+stats-inventory:
+  title: "&7Stats: &a<target>"
+  combat:
+    name: "&6Combat"
+    lore:
+    - "&7&m-----------------------"
+    - "&7Kills&7: &6<target_kills>"
+    - " "
+    - "&7Deaths&7: &6<target_deaths>"
+    - " "
+    - "&7KDR&7: &6<target_kdr>"
+    - "&7&m-----------------------"
+
+  misc:
+    name: "&6Misc"
+    lore:
+    - "&7&m-----------------------"
+    - "&7Games Played&7: &6<target_games_played>"
+    - " "
+    - "&7Wins&7: &6<target_wins>"
+    - " "
+    - "&7Points&7: &6<target_points>"
+    - "&7&m-----------------------"
+
+  potion:
+    name: "&6Potion"
+    lore:
+    - "&7&m-----------------------"
+    - "&7Potion splashed&7: &6<target_potion_splashed>"
+    - " "
+    - "&7Potion splashed&7: &6<target_potion_drank>"
+    - "&7&m-----------------------"
+
+  other:
+    name: "&6Other"
+    lore:
+    - "&7&m-----------------------"
+    - "&7Golden apples eaten&7: &6<target_golden_apples_eaten>"
+    - " "
+    - "&7Bow shots&7: &6<target_bow_shots>"
+    - " "
+    - "&7Chest opened&7: &6<target_chest_opened>"
+    - "&7&m-----------------------"
+
+player-statistics-inventory:
+  title: "&aStatistics"
+  name: "&6<player_name>"
+  lore:
+  - "&7&m--------------------------"
+  - "&6Kills&7: &f<player_kills>"
+  - "&6Deaths&7: &f<player_deaths>"
+  - "&6KillStreak&7: &f<player_killstreak>"
+  - "&6Wins&7: &f<player_wins>"
+  - "&6Points&7: &f<player_points>"
+  - "&6Games Played&7: &f<player_games_played>"
+  - "&6Golden apples eaten&7: &f<player_golden_apples_eaten>"
+  - "&6Bow shots&7: &f<player_bow_shots>"
+  - "&6Chests opened&7: &f<player_chests_opened>"
+  - "&6Potion splashed&7: &f<player_potion_splashed>"
+  - "&6Potion drank&7: &f<player_potion_drank>"
+  - "&7&m--------------------------"
+
+  page-button:
+    next-page-name: "&aNext page"
+    previous-page-name: "&4Previous page"
+    last-page-name: "&cThis is last page"
+    first-page-name: "&cThis is first page"
+    lore:
+    - "&9Right click to"
+    - "&9jump to a page"
+
+player-alive-inventory:
+  title: "&aAlive Players"
+  name: "&6<player_name>"
+  lore:
+  - "&7Click to teleport"
+  - "&7to <player_name>"
+
+leaderboard:
+  kills:
+    enabled: true
+  deaths:
+    enabled: true
+  wins:
+    enabled: true
+  points:
+    enabled: true
+  games-played:
+    enabled: true
+  kill-streak:
+    enabled: true
+  golden-apple-eaten:
+    enabled: true
+  bow-shots:
+    enabled: true
+  chest-broke:
+    enabled: true
+  potion-splashed:
+    enabled: true
+  potion-drank:
+    enabled: true
+

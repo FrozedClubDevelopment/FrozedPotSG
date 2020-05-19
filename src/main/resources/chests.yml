@@ -1,0 +1,9 @@
+#
+# NOTE: You must set all the items in all the chests (54)
+#
+# This system works by pure RNG (Random Number Generation)
+# For each chest that is placed on your SG Map, the contents
+# of it will be determined by the RNG Factor. Meaning that a
+# chest can have the loot of 1 out of the different 54 chests
+#
+CHESTS:

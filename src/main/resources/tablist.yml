@@ -1,0 +1,22 @@
+tablist:
+  header: "&b&lFrozedSG"
+  footer: "&7&oYou're playing &bFrozedSG &7&oon mc.frozed.club"
+  bottom_left: "&bstore.frozed.club"
+  bottom_center: "&bmc.frozed.club"
+  bottom_right: "&bwww.frozed.club"
+
+isInLobby:
+  title: "&b&lFrozedSG"
+  you: "&3&lYou"
+  server: "&3&lServer"
+  state: "&3&lLobby"
+  player_info: "&3&lPlayer Info"
+  top5wins: "&3&lTop 5 Wins"
+  location: "&3&lLocation"
+
+isInMatch:
+  title: "&b&lFrozedSG"
+  server: "&3&lServer"
+  players_title: "&3&lPlayers"
+  spectators_title: "&3&lSpectators"
+

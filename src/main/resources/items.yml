@@ -1,0 +1,53 @@
+player-tracker:
+  name: "&6Player tracker"
+spectator-inventory:
+  alive-players:
+    name: "&eAlive Players"
+    lore:
+    - "&7Click to see"
+    - "&7player who are still playing."
+  quit-sg:
+    #
+    # If LOBBY-ENABLED in config.yml is true, it will get lobby-enabled data, else will get lobby-disabled data
+    #
+    lobby-enabled:
+      name: "&eConnect to lobby"
+      lore:
+      - "&7Click to connect"
+      - "&7to lobby server."
+    lobby-disabled:
+      name: "&eQuit"
+      lore:
+      - "&7Click to quit"
+      - "&7this sg server."
+  inspect-inventory:
+    name: "&eInspect Inventory"
+    lore:
+    - "&7Click player to"
+    - "&7inspect inventory."
+  random-teleport:
+    name: "&eRandom Teleport"
+    lore:
+    - "&7Click to teleport"
+    - "&7to a random player in game."
+join-inventory:
+  leaderboard:
+    name: "&eLeaderboards"
+    lore:
+    - "&7Right click me to"
+    - "&7see leaderboards."
+  player-stats:
+    name: "&ePlayers Statistics"
+    lore:
+    - "&7Right click me to"
+    - "&7see players statistics"
+  settings:
+    name: "&eSettings"
+    lore:
+    - "&7Right click me to"
+    - "&7toggle your settings"
+  your-stats:
+    name: "&eYour Statistics"
+    lore:
+    - "&7Right click me to"
+    - "&7see your statistics"

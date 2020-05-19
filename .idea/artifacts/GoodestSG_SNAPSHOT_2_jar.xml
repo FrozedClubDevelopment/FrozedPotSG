@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GoodestSG-SNAPSHOT-2:jar">
+    <output-path>$PROJECT_DIR$/compilation/testing</output-path>
+    <root id="archive" name="GoodestSG-SNAPSHOT.jar">
+      <element id="module-output" name="FrozedSG" />
+      <element id="library" level="project" name="lombok" />
+      <element id="library" level="project" name="mongoo" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,85 @@
+DEBUG: false
+MONGODB:
+  ADDRESS: 'mongoAddress'
+  PORT: 27017
+  DATABASE: 'mongoBase'
+  AUTHENTICATION:
+    ENABLED: false
+    USERNAME: 'mongoUser'
+    PASSWORD: 'mongoPassword'
+    DATABASE: 'mongoBase'
+ANNOUNCE:
+  ENABLED: true
+  BUNGEE: true
+  FORMAT: '&7[&b<server_name>] &f<player_display_name>&7: &bCome play &f<server_name> &bby typing &f/server <server_name>'
+ROADS:
+  MAKE-ROADS: false
+  ROAD-MATERIALS:
+  - COBBLESTONE
+  - GRASS
+  - GRAVEL
+  - STONE
+CHAT-FORMAT:
+  ENABLED: true
+  FORMAT: '&f<player_display_name>&7: <message>'
+  SPECTATOR-FORMAT: '&7[Spectator&7] &r<player_display_name>&7: <message>'
+SERVER-PREMIUM: false
+LEADERBOARD-FORMAT: '&f<pos>. &b<name>&7: &7(&3<amount>&7)'
+PREFIXES:
+  GAME: '&8[&b&lFrozedSG&8] '
+  BORDER: '&8[&b&lBorder&8] '
+WORLDS:
+  LOBBY: lobby
+  GAME: potsg_map
+LOCATIONS:
+  LOBBY:
+    YAW: -90
+    PITCH: 0
+BOOLEANS:
+  #
+  # LOBBY-ENABLED is to toggle if you have BungeeCord or not (To make global announcements before starting the match)
+  #
+  LOBBY-ENABLED: true
+LOBBY-FALLBACK-SERVER: hub
+GAME-CENTER-LOCATION: 0;100;0
+DEATH-MATCH:
+  FLOOR-MATERIALS:
+  - BEDROCK
+  - STONE
+  WALL-MATERIALS:
+    TOP:
+    - FENCE
+    BEETWEEN:
+    - BEDROCK
+    - COBBLESTONE
+    - STONE
+    BOTTOM:
+    - BEDROCK
+INFORMATIONS:
+  WEB: www.frozed.club
+  IP: mc.frozed.club
+  TS: ts.frozed.club
+  STORE: store.frozed.club
+  SERVER: FSG-001
+BORDER:
+  START: 500
+  SHRINK-UNTIL: 25
+  SHRINK-EVERY-SECONDS: 300
+  SHRINK-STREAM: 500;200;150;100;50;25
+START-BORDER: 500
+REBOOT_COMMAND: stop
+POINTS:
+  PER-KILL: 5
+  PER-WIN: 10
+MINIMUM-PLAYERS-TO-START-GAME: 2
+MAXIMUM-PLAYERS-PER-GAME: 30
+AUTO-START-COUNTDOWN-IN-SECONDS: 20
+COUNTDOWNS:
+  IN-SECONDS:
+    START: 20
+    PRE-MATCH: 60
+    PVP-PROT: 180
+    REBOOT: 20
+  IN-MINUTES:
+    FEASTS-SPAWN: 10
+    DEATH-MATCH: 30
