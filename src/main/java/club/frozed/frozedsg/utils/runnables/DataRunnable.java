@@ -1,16 +1,16 @@
-package me.elb1to.frozedsg.utils.runnables;
+package club.frozed.frozedsg.utils.runnables;
 
 
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.border.BorderManager;
+import club.frozed.frozedsg.managers.GameManager;
+import club.frozed.frozedsg.managers.MongoManager;
+import club.frozed.frozedsg.managers.PlayerManager;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import lombok.Getter;
 import lombok.Setter;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.border.BorderManager;
-import me.elb1to.frozedsg.managers.GameManager;
-import me.elb1to.frozedsg.managers.MongoManager;
-import me.elb1to.frozedsg.managers.PlayerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;
 

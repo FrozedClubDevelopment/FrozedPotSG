@@ -1,9 +1,9 @@
-package me.elb1to.frozedsg.utils.pagination;
+package club.frozed.frozedsg.utils.pagination;
 
+import club.frozed.frozedsg.utils.pagination.buttons.Button;
 import lombok.Getter;
 import lombok.Setter;
 
-import me.elb1to.frozedsg.utils.pagination.buttons.Button;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

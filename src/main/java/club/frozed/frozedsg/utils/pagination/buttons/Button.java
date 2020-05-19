@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.utils.pagination.buttons;
+package club.frozed.frozedsg.utils.pagination.buttons;
 
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Material;

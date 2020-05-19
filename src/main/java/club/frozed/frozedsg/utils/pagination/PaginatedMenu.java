@@ -1,9 +1,9 @@
-package me.elb1to.frozedsg.utils.pagination;
+package club.frozed.frozedsg.utils.pagination;
 
+import club.frozed.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.utils.pagination.buttons.Button;
+import club.frozed.frozedsg.utils.pagination.buttons.PageButton;
 import lombok.Getter;
-import me.elb1to.frozedsg.utils.chat.Color;
-import me.elb1to.frozedsg.utils.pagination.buttons.Button;
-import me.elb1to.frozedsg.utils.pagination.buttons.PageButton;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;

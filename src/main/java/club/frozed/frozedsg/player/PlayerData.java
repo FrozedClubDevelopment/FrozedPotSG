@@ -1,16 +1,16 @@
-package me.elb1to.frozedsg.player;
+package club.frozed.frozedsg.player;
 
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.enums.PlayerState;
+import club.frozed.frozedsg.managers.GameManager;
+import club.frozed.frozedsg.utils.ItemBuilder;
 import com.mongodb.client.model.Filters;
 import lombok.Data;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.enums.PlayerState;
-import me.elb1to.frozedsg.managers.GameManager;
-import me.elb1to.frozedsg.managers.MongoManager;
-import me.elb1to.frozedsg.utils.Cooldown;
-import me.elb1to.frozedsg.utils.ItemBuilder;
-import me.elb1to.frozedsg.utils.RespawnInfo;
-import me.elb1to.frozedsg.utils.Setting;
-import me.elb1to.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.managers.MongoManager;
+import club.frozed.frozedsg.utils.Cooldown;
+import club.frozed.frozedsg.utils.RespawnInfo;
+import club.frozed.frozedsg.utils.Setting;
+import club.frozed.frozedsg.utils.chat.Color;
 import org.bson.Document;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

@@ -1,7 +1,7 @@
-package me.elb1to.frozedsg.utils.tasks;
+package club.frozed.frozedsg.utils.tasks;
 
-import me.elb1to.frozedsg.managers.PlayerDataManager;
-import me.elb1to.frozedsg.player.PlayerData;
+import club.frozed.frozedsg.managers.PlayerDataManager;
+import club.frozed.frozedsg.player.PlayerData;
 
 public class DataSaveTask implements Runnable {
 

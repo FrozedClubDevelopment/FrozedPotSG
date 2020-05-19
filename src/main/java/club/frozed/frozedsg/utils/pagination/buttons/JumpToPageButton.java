@@ -1,8 +1,8 @@
-package me.elb1to.frozedsg.utils.pagination.buttons;
+package club.frozed.frozedsg.utils.pagination.buttons;
 
+import club.frozed.frozedsg.utils.chat.Color;
 import lombok.AllArgsConstructor;
-import me.elb1to.frozedsg.utils.chat.Color;
-import me.elb1to.frozedsg.utils.pagination.PaginatedMenu;
+import club.frozed.frozedsg.utils.pagination.PaginatedMenu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
@@ -40,7 +40,7 @@ public class JumpToPageButton extends Button {
     @Override
     public void clicked(Player player, int i, ClickType clickType, int hb) {
         this.menu.modPage(player, this.page - this.menu.getPage());
-        Button.playNeutral(player);
+        playNeutral(player);
     }
 
 }

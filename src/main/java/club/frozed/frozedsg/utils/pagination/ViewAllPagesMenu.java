@@ -1,13 +1,13 @@
-package me.elb1to.frozedsg.utils.pagination;
+package club.frozed.frozedsg.utils.pagination;
 
+import club.frozed.frozedsg.utils.pagination.buttons.BackButton;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-import me.elb1to.frozedsg.utils.pagination.buttons.BackButton;
-import me.elb1to.frozedsg.utils.pagination.buttons.Button;
+import club.frozed.frozedsg.utils.pagination.buttons.Button;
 
-import me.elb1to.frozedsg.utils.pagination.buttons.JumpToPageButton;
+import club.frozed.frozedsg.utils.pagination.buttons.JumpToPageButton;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;

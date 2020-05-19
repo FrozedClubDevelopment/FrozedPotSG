@@ -1,6 +1,6 @@
-package me.elb1to.frozedsg.utils.tasks;
+package club.frozed.frozedsg.utils.tasks;
 
-import me.elb1to.frozedsg.managers.GameManager;
+import club.frozed.frozedsg.managers.GameManager;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.BrewingStand;

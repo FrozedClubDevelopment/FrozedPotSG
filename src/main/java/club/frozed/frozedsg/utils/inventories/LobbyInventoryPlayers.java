@@ -1,11 +1,11 @@
-package me.elb1to.frozedsg.utils.inventories;
+package club.frozed.frozedsg.utils.inventories;
 
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.utils.ItemBuilder;
-import me.elb1to.frozedsg.utils.chat.Color;
-import me.elb1to.frozedsg.utils.leaderboards.LeaderboardManager;
-import me.elb1to.frozedsg.utils.pagination.PaginatedMenu;
-import me.elb1to.frozedsg.utils.pagination.buttons.Button;
+import club.frozed.frozedsg.utils.ItemBuilder;
+import club.frozed.frozedsg.utils.leaderboards.LeaderboardManager;
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.utils.pagination.PaginatedMenu;
+import club.frozed.frozedsg.utils.pagination.buttons.Button;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

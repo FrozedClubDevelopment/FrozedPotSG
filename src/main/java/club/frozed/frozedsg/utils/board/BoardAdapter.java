@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.utils.board;
+package club.frozed.frozedsg.utils.board;
 
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;

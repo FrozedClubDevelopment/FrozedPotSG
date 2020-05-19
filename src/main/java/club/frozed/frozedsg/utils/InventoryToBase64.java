@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.utils;
+package club.frozed.frozedsg.utils;
 
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.io.BukkitObjectInputStream;

@@ -1,11 +1,11 @@
-package me.elb1to.frozedsg.commands.staff;
+package club.frozed.frozedsg.commands.staff;
 
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.utils.chat.Color;
-import me.elb1to.frozedsg.utils.command.BaseCommand;
-import me.elb1to.frozedsg.utils.command.Command;
-import me.elb1to.frozedsg.utils.command.CommandArgs;
-import me.elb1to.frozedsg.utils.configurations.ConfigFile;
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.utils.configurations.ConfigFile;
+import club.frozed.frozedsg.utils.command.BaseCommand;
+import club.frozed.frozedsg.utils.command.Command;
+import club.frozed.frozedsg.utils.command.CommandArgs;
 
 import java.util.ArrayList;
 import java.util.List;

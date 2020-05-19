@@ -1,14 +1,14 @@
-package me.elb1to.frozedsg.utils.runnables;
+package club.frozed.frozedsg.utils.runnables;
 
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.managers.GameManager;
+import club.frozed.frozedsg.managers.PlayerManager;
+import club.frozed.frozedsg.utils.Utils;
+import club.frozed.frozedsg.utils.chat.Color;
 import lombok.Getter;
 import lombok.Setter;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.enums.GameState;
-import me.elb1to.frozedsg.events.SGGameWinEvent;
-import me.elb1to.frozedsg.managers.GameManager;
-import me.elb1to.frozedsg.managers.PlayerManager;
-import me.elb1to.frozedsg.utils.Utils;
-import me.elb1to.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.enums.GameState;
+import club.frozed.frozedsg.events.SGGameWinEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;

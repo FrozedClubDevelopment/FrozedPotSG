@@ -1,15 +1,16 @@
-package me.elb1to.frozedsg.managers;
+package club.frozed.frozedsg.managers;
 
+import club.frozed.frozedsg.utils.ItemBuilder;
+import club.frozed.frozedsg.utils.countdowns.*;
 import lombok.Data;
 import lombok.Getter;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.enums.GameState;
-import me.elb1to.frozedsg.player.PlayerData;
-import me.elb1to.frozedsg.utils.ItemBuilder;
-import me.elb1to.frozedsg.utils.Utils;
-import me.elb1to.frozedsg.utils.chat.Color;
-import me.elb1to.frozedsg.utils.countdowns.*;
-import me.elb1to.frozedsg.utils.runnables.GameRunnable;
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.enums.GameState;
+import club.frozed.frozedsg.player.PlayerData;
+import club.frozed.frozedsg.utils.Utils;
+import club.frozed.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.utils.countdowns.*;
+import club.frozed.frozedsg.utils.runnables.GameRunnable;
 import org.apache.commons.lang.math.RandomUtils;
 import org.bukkit.*;
 import org.bukkit.block.Block;

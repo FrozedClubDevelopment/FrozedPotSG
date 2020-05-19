@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.utils.command;
+package club.frozed.frozedsg.utils.command;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

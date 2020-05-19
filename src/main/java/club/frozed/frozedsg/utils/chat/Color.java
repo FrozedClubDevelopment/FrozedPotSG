@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.utils.chat;
+package club.frozed.frozedsg.utils.chat;
 
 import org.bukkit.ChatColor;
 import java.util.List;

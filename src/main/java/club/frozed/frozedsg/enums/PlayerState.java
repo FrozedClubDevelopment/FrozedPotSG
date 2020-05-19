@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.enums;
+package club.frozed.frozedsg.enums;
 
 public enum PlayerState {
 

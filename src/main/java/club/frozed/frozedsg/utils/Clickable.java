@@ -1,7 +1,7 @@
-package me.elb1to.frozedsg.utils;
+package club.frozed.frozedsg.utils;
 
+import club.frozed.frozedsg.utils.chat.Color;
 import lombok.NoArgsConstructor;
-import me.elb1to.frozedsg.utils.chat.Color;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;

@@ -1,13 +1,13 @@
-package me.elb1to.frozedsg.managers;
+package club.frozed.frozedsg.managers;
 
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.utils.chat.Color;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import lombok.Getter;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.utils.chat.Color;
 import org.bson.Document;
 import org.bukkit.Bukkit;
 

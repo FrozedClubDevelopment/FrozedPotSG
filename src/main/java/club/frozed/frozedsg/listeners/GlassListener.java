@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.listeners;
+package club.frozed.frozedsg.listeners;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -7,9 +7,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import me.elb1to.frozedsg.border.BorderManager;
-import me.elb1to.frozedsg.managers.PlayerDataManager;
-import me.elb1to.frozedsg.player.PlayerData;
+import club.frozed.frozedsg.border.BorderManager;
+import club.frozed.frozedsg.managers.PlayerDataManager;
+import club.frozed.frozedsg.player.PlayerData;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;

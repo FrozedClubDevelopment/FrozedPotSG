@@ -1,7 +1,7 @@
-package me.elb1to.frozedsg.utils.board;
+package club.frozed.frozedsg.utils.board;
 
 import lombok.Getter;
-import me.elb1to.frozedsg.utils.Symbols;
+import club.frozed.frozedsg.utils.Symbols;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;

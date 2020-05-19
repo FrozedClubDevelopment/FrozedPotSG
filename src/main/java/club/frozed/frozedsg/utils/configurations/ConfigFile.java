@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.utils.configurations;
+package club.frozed.frozedsg.utils.configurations;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.List;
 
 import lombok.Data;
 import lombok.Getter;
-import me.elb1to.frozedsg.PotSG;
+import club.frozed.frozedsg.PotSG;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 

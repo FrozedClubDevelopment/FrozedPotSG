@@ -1,11 +1,11 @@
-package me.elb1to.frozedsg.border;
+package club.frozed.frozedsg.border;
 
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.managers.GameManager;
+import club.frozed.frozedsg.utils.Utils;
+import club.frozed.frozedsg.utils.chat.Color;
 import lombok.Getter;
 import lombok.Setter;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.managers.GameManager;
-import me.elb1to.frozedsg.utils.Utils;
-import me.elb1to.frozedsg.utils.chat.Color;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;

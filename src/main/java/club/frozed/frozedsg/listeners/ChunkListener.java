@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.listeners;
+package club.frozed.frozedsg.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

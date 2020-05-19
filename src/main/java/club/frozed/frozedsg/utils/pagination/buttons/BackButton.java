@@ -1,8 +1,8 @@
-package me.elb1to.frozedsg.utils.pagination.buttons;
+package club.frozed.frozedsg.utils.pagination.buttons;
 
+import club.frozed.frozedsg.utils.chat.Color;
 import lombok.AllArgsConstructor;
-import me.elb1to.frozedsg.utils.chat.Color;
-import me.elb1to.frozedsg.utils.pagination.Menu;
+import club.frozed.frozedsg.utils.pagination.Menu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
@@ -27,7 +27,7 @@ public class BackButton extends Button {
 
     @Override
     public void clicked(Player player, int i, ClickType clickType, int hb) {
-        Button.playNeutral(player);
+        playNeutral(player);
 
         this.back.openMenu(player);
     }

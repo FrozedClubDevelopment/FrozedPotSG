@@ -1,9 +1,9 @@
-package me.elb1to.frozedsg.managers;
+package club.frozed.frozedsg.managers;
 
+import club.frozed.frozedsg.player.PlayerData;
 import com.mongodb.client.model.Filters;
 import lombok.Data;
 import lombok.Getter;
-import me.elb1to.frozedsg.player.PlayerData;
 import org.bson.Document;
 
 import java.util.HashMap;

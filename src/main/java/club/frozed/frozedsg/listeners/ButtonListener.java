@@ -1,9 +1,9 @@
-package me.elb1to.frozedsg.listeners;
+package club.frozed.frozedsg.listeners;
 
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.utils.pagination.Menu;
-import me.elb1to.frozedsg.utils.pagination.PaginatedMenu;
-import me.elb1to.frozedsg.utils.pagination.buttons.Button;
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.utils.pagination.Menu;
+import club.frozed.frozedsg.utils.pagination.PaginatedMenu;
+import club.frozed.frozedsg.utils.pagination.buttons.Button;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;

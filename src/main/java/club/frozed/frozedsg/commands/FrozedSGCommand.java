@@ -1,10 +1,10 @@
-package me.elb1to.frozedsg.commands;
+package club.frozed.frozedsg.commands;
 
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.utils.chat.Color;
-import me.elb1to.frozedsg.utils.command.BaseCommand;
-import me.elb1to.frozedsg.utils.command.Command;
-import me.elb1to.frozedsg.utils.command.CommandArgs;
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.utils.command.BaseCommand;
+import club.frozed.frozedsg.utils.command.Command;
+import club.frozed.frozedsg.utils.command.CommandArgs;
 import org.bukkit.entity.Player;
 
 public class FrozedSGCommand extends BaseCommand {

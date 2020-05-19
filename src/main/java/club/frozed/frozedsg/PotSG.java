@@ -1,27 +1,27 @@
-package me.elb1to.frozedsg;
+package club.frozed.frozedsg;
 
+import club.frozed.frozedsg.border.BorderManager;
+import club.frozed.frozedsg.commands.*;
+import club.frozed.frozedsg.commands.staff.*;
+import club.frozed.frozedsg.layout.BoardLayout;
+import club.frozed.frozedsg.layout.TablistLayout;
+import club.frozed.frozedsg.listeners.*;
+import club.frozed.frozedsg.managers.*;
+import club.frozed.frozedsg.other.PlayerListener;
+import club.frozed.frozedsg.utils.Utils;
+import club.frozed.frozedsg.utils.board.BoardManager;
+import club.frozed.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.utils.command.CommandFramework;
+import club.frozed.frozedsg.utils.configurations.ConfigFile;
+import club.frozed.frozedsg.utils.leaderboards.LeaderboardManager;
+import club.frozed.frozedsg.utils.runnables.DataRunnable;
+import club.frozed.frozedsg.utils.tasks.BrewingTask;
+import club.frozed.frozedsg.utils.tasks.DataSaveTask;
+import club.frozed.frozedsg.utils.tasks.LobbyTask;
+import club.frozed.frozedsg.utils.tasks.PlayerTask;
 import lombok.Getter;
 import lombok.Setter;
 import me.allen.ziggurat.Ziggurat;
-import me.elb1to.frozedsg.border.BorderManager;
-import me.elb1to.frozedsg.commands.*;
-import me.elb1to.frozedsg.commands.staff.*;
-import me.elb1to.frozedsg.layout.BoardLayout;
-import me.elb1to.frozedsg.layout.TablistLayout;
-import me.elb1to.frozedsg.listeners.*;
-import me.elb1to.frozedsg.managers.*;
-import me.elb1to.frozedsg.utils.Utils;
-import me.elb1to.frozedsg.utils.chat.Color;
-import me.elb1to.frozedsg.utils.leaderboards.LeaderboardManager;
-import me.elb1to.frozedsg.other.PlayerListener;
-import me.elb1to.frozedsg.utils.board.BoardManager;
-import me.elb1to.frozedsg.utils.command.CommandFramework;
-import me.elb1to.frozedsg.utils.configurations.ConfigFile;
-import me.elb1to.frozedsg.utils.runnables.DataRunnable;
-import me.elb1to.frozedsg.utils.tasks.BrewingTask;
-import me.elb1to.frozedsg.utils.tasks.DataSaveTask;
-import me.elb1to.frozedsg.utils.tasks.LobbyTask;
-import me.elb1to.frozedsg.utils.tasks.PlayerTask;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -54,7 +54,14 @@ public class PotSG extends JavaPlugin {
 
         new Ziggurat(this, new TablistLayout());
 
-        if (!this.getDescription().getAuthors().contains("Elb1to") || !this.getDescription().getAuthors().contains("Scalebound") || !this.getDescription().getName().equals("FrozedSG")) {
+        if (!this.getDescription().getAuthors().contains("FrozedDevelopment") ||
+                !this.getDescription().getAuthors().contains("Elb1to") || !this.getDescription().getAuthors().contains("Scalebound") ||
+                !this.getDescription().getDescription().equals("Minemen/Lunar PotSG Replica") || !this.getDescription().getName().equals("FrozedSG")) {
+            int i;
+            for (i = 0; i < 10; i++) {
+                Bukkit.getServer().broadcastMessage(ChatColor.RED + "Why are you changing the");
+                Bukkit.getServer().broadcastMessage(ChatColor.RED + "plugin yml ( ͡° ͜ʖ ͡°)╭∩╮");
+            }
             System.exit(0);
             Bukkit.shutdown();
         }

@@ -1,10 +1,10 @@
-package me.elb1to.frozedsg.border;
+package club.frozed.frozedsg.border;
 
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.managers.WorldsManager;
+import club.frozed.frozedsg.utils.Utils;
 import lombok.Getter;
 import lombok.Setter;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.managers.WorldsManager;
-import me.elb1to.frozedsg.utils.Utils;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;

@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.utils;
+package club.frozed.frozedsg.utils;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
@@ -49,7 +49,7 @@ public class ItemBuilder {
 	}
 	public ItemBuilder setName(String name) {
 		ItemMeta im = is.getItemMeta();
-		im.setDisplayName(me.elb1to.frozedsg.utils.chat.Color.translate(name));
+		im.setDisplayName(club.frozed.frozedsg.utils.chat.Color.translate(name));
 		is.setItemMeta(im);
 		return this;
 	}
@@ -57,7 +57,7 @@ public class ItemBuilder {
 	public ItemBuilder setNameWithArrows(String name) {
 		String color = "&f";
 		ItemMeta im = is.getItemMeta();
-		im.setDisplayName(me.elb1to.frozedsg.utils.chat.Color.translate(color + Symbols.ARROW_RIGHT + " " + name + " " + color + Symbols.ARROW_LEFT));
+		im.setDisplayName(club.frozed.frozedsg.utils.chat.Color.translate(color + Symbols.ARROW_RIGHT + " " + name + " " + color + Symbols.ARROW_LEFT));
 		is.setItemMeta(im);
 		return this;
 	}
@@ -160,7 +160,7 @@ public class ItemBuilder {
 		List<String> lore = new ArrayList<>();
 		if (im.hasLore())
 			lore = new ArrayList<>(im.getLore());
-		lore.add(me.elb1to.frozedsg.utils.chat.Color.translate(line));
+		lore.add(club.frozed.frozedsg.utils.chat.Color.translate(line));
 		im.setLore(lore);
 		is.setItemMeta(im);
 		return this;

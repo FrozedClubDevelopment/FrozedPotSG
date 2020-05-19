@@ -1,10 +1,10 @@
-package me.elb1to.frozedsg.utils.countdowns;
+package club.frozed.frozedsg.utils.countdowns;
 
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.managers.GameManager;
-import me.elb1to.frozedsg.managers.PlayerDataManager;
-import me.elb1to.frozedsg.player.PlayerData;
-import me.elb1to.frozedsg.utils.Utils;
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.managers.GameManager;
+import club.frozed.frozedsg.managers.PlayerDataManager;
+import club.frozed.frozedsg.player.PlayerData;
+import club.frozed.frozedsg.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.scheduler.BukkitRunnable;

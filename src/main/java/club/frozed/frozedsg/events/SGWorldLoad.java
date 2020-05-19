@@ -1,8 +1,8 @@
-package me.elb1to.frozedsg.events;
+package club.frozed.frozedsg.events;
 
+import club.frozed.frozedsg.player.PlayerData;
 import lombok.Getter;
 import lombok.Setter;
-import me.elb1to.frozedsg.player.PlayerData;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.event.Event;

@@ -1,8 +1,8 @@
-package me.elb1to.frozedsg.utils.countdowns;
+package club.frozed.frozedsg.utils.countdowns;
 
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.managers.GameManager;
-import me.elb1to.frozedsg.utils.Utils;
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.managers.GameManager;
+import club.frozed.frozedsg.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;

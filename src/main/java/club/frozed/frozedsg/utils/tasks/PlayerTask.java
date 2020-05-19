@@ -1,7 +1,7 @@
-package me.elb1to.frozedsg.utils.tasks;
+package club.frozed.frozedsg.utils.tasks;
 
-import me.elb1to.frozedsg.managers.PlayerManager;
-import me.elb1to.frozedsg.utils.Utils;
+import club.frozed.frozedsg.managers.PlayerManager;
+import club.frozed.frozedsg.utils.Utils;
 import org.bukkit.entity.Player;
 
 public class PlayerTask implements Runnable {

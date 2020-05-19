@@ -1,16 +1,16 @@
-package me.elb1to.frozedsg.commands.staff;
+package club.frozed.frozedsg.commands.staff;
 
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.enums.GameState;
-import me.elb1to.frozedsg.managers.ChestsManager;
-import me.elb1to.frozedsg.managers.GameManager;
-import me.elb1to.frozedsg.managers.WorldsManager;
-import me.elb1to.frozedsg.utils.Clickable;
-import me.elb1to.frozedsg.utils.Utils;
-import me.elb1to.frozedsg.utils.chat.Color;
-import me.elb1to.frozedsg.utils.command.BaseCommand;
-import me.elb1to.frozedsg.utils.command.Command;
-import me.elb1to.frozedsg.utils.command.CommandArgs;
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.managers.ChestsManager;
+import club.frozed.frozedsg.managers.GameManager;
+import club.frozed.frozedsg.managers.WorldsManager;
+import club.frozed.frozedsg.utils.Utils;
+import club.frozed.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.enums.GameState;
+import club.frozed.frozedsg.utils.Clickable;
+import club.frozed.frozedsg.utils.command.BaseCommand;
+import club.frozed.frozedsg.utils.command.Command;
+import club.frozed.frozedsg.utils.command.CommandArgs;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 

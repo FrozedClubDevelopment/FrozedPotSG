@@ -1,12 +1,12 @@
-package me.elb1to.frozedsg.managers;
+package club.frozed.frozedsg.managers;
 
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.enums.PlayerState;
+import club.frozed.frozedsg.player.PlayerData;
+import club.frozed.frozedsg.utils.ItemBuilder;
 import lombok.Data;
 import lombok.Getter;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.enums.PlayerState;
-import me.elb1to.frozedsg.player.PlayerData;
-import me.elb1to.frozedsg.utils.ItemBuilder;
-import me.elb1to.frozedsg.utils.Utils;
+import club.frozed.frozedsg.utils.Utils;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

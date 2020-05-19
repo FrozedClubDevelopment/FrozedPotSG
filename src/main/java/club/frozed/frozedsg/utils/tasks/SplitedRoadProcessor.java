@@ -1,8 +1,8 @@
 
-package me.elb1to.frozedsg.utils.tasks;
+package club.frozed.frozedsg.utils.tasks;
 
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.utils.chat.Color;
 import org.apache.commons.lang.math.RandomUtils;
 import org.bukkit.*;
 import org.bukkit.block.Biome;
@@ -80,7 +80,7 @@ public class SplitedRoadProcessor extends BukkitRunnable {
                 this.processingZ = -1 * this.length;
                 this.processingX = 0;
                 this.phase = 1;
-                Bukkit.getConsoleSender().sendMessage(Color.translate("&b[FrozedSG] &aPhase 1 of road process has begun."));
+                Bukkit.getConsoleSender().sendMessage(club.frozed.frozedsg.utils.chat.Color.translate("&b[FrozedSG] &aPhase 1 of road process has begun."));
             }
             if (this.phase == 1) {
                 final Chunk chunk = centerChunk;
@@ -118,7 +118,7 @@ public class SplitedRoadProcessor extends BukkitRunnable {
                     }
                 }
                 this.phase = 2;
-                Bukkit.getConsoleSender().sendMessage(Color.translate("&b[FrozedSG] &aPhase 2 of road process has begun."));
+                Bukkit.getConsoleSender().sendMessage(club.frozed.frozedsg.utils.chat.Color.translate("&b[FrozedSG] &aPhase 2 of road process has begun."));
             }
             if (this.phase == 2) {
                 while (this.processingZ < this.length) {
@@ -139,7 +139,7 @@ public class SplitedRoadProcessor extends BukkitRunnable {
                 this.phase = 3;
                 this.processingZ = 0;
                 this.processingX = -1 * this.length;
-                Bukkit.getConsoleSender().sendMessage(Color.translate("&b[FrozedSG] &aPhase 3 of road process has begun."));
+                Bukkit.getConsoleSender().sendMessage(club.frozed.frozedsg.utils.chat.Color.translate("&b[FrozedSG] &aPhase 3 of road process has begun."));
             }
             if (this.phase == 3) {
                 while (this.processingX < this.length) {

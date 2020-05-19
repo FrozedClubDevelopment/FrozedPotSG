@@ -1,10 +1,10 @@
-package me.elb1to.frozedsg.utils.pagination.buttons;
+package club.frozed.frozedsg.utils.pagination.buttons;
 
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.utils.pagination.ViewAllPagesMenu;
 import lombok.AllArgsConstructor;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.utils.chat.Color;
-import me.elb1to.frozedsg.utils.pagination.PaginatedMenu;
-import me.elb1to.frozedsg.utils.pagination.ViewAllPagesMenu;
+import club.frozed.frozedsg.utils.pagination.PaginatedMenu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;

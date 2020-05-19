@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.events;
+package club.frozed.frozedsg.events;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,13 +1,13 @@
-package me.elb1to.frozedsg.managers;
+package club.frozed.frozedsg.managers;
 
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.utils.ItemBuilder;
 import lombok.Getter;
 import lombok.Setter;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.utils.Chest;
-import me.elb1to.frozedsg.utils.InventoryToBase64;
-import me.elb1to.frozedsg.utils.ItemBuilder;
-import me.elb1to.frozedsg.utils.Utils;
-import me.elb1to.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.utils.Chest;
+import club.frozed.frozedsg.utils.InventoryToBase64;
+import club.frozed.frozedsg.utils.Utils;
+import club.frozed.frozedsg.utils.chat.Color;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

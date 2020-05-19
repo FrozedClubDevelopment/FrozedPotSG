@@ -1,15 +1,15 @@
-package me.elb1to.frozedsg.utils;
+package club.frozed.frozedsg.utils;
 
+import club.frozed.frozedsg.PotSG;
+import club.frozed.frozedsg.enums.PlayerState;
+import club.frozed.frozedsg.managers.GameManager;
+import club.frozed.frozedsg.managers.PlayerManager;
+import club.frozed.frozedsg.utils.chat.Color;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.border.Border;
-import me.elb1to.frozedsg.border.BorderManager;
-import me.elb1to.frozedsg.enums.PlayerState;
-import me.elb1to.frozedsg.managers.GameManager;
-import me.elb1to.frozedsg.managers.PlayerDataManager;
-import me.elb1to.frozedsg.managers.PlayerManager;
-import me.elb1to.frozedsg.utils.chat.Color;
+import club.frozed.frozedsg.border.Border;
+import club.frozed.frozedsg.border.BorderManager;
+import club.frozed.frozedsg.managers.PlayerDataManager;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -68,20 +68,20 @@ public class Utils {
     }
 
     public static void broadcastMessage(String message) {
-        getOnlinePlayers().forEach(player -> player.sendMessage(Color.translate(message)));
+        getOnlinePlayers().forEach(player -> player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(message)));
     }
 
     public static void broadcastMessage(String message, boolean prefix) {
-        getOnlinePlayers().forEach(player -> player.sendMessage(prefix ? GameManager.getInstance().getGamePrefix() + Color.translate(message) : Color.translate(message)));
+        getOnlinePlayers().forEach(player -> player.sendMessage(prefix ? GameManager.getInstance().getGamePrefix() + club.frozed.frozedsg.utils.chat.Color.translate(message) : club.frozed.frozedsg.utils.chat.Color.translate(message)));
     }
 
     public static void broadcastMessageToSpectators(String message) {
         getOnlinePlayers().stream().filter(player ->
-                PlayerManager.getInstance().isSpectator(player)).forEach(player -> player.sendMessage(Color.translate(message)));
+                PlayerManager.getInstance().isSpectator(player)).forEach(player -> player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(message)));
     }
     public static void broadcastMessageToStaff(String message) {
         getOnlinePlayers().stream().filter(player ->
-                player.hasPermission("frozedsg.staff")).forEach(player -> player.sendMessage(Color.translate(message)));
+                player.hasPermission("frozedsg.staff")).forEach(player -> player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(message)));
     }
     public static void playSound(Sound sound) {
         getOnlinePlayers().forEach(player -> player.playSound(player.getLocation(), sound, 2F, 2F));
@@ -114,7 +114,7 @@ public class Utils {
         if (online.size() != 0) {
             Player target = online.get(new Random().nextInt(online.size()));
             player.teleport(target);
-            player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&eYou've been teleported to &f'" + target.getName() + "'&e."));
+            player.sendMessage(GameManager.getInstance().getGamePrefix() + club.frozed.frozedsg.utils.chat.Color.translate("&eYou've been teleported to &f'" + target.getName() + "'&e."));
         } else {
             player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&eNo players found who are playing this game."));
         }

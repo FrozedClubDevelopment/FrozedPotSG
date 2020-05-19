@@ -1,6 +1,6 @@
-package me.elb1to.frozedsg.utils.command;
+package club.frozed.frozedsg.utils.command;
 
-import me.elb1to.frozedsg.PotSG;
+import club.frozed.frozedsg.PotSG;
 
 public abstract class BaseCommand {
 

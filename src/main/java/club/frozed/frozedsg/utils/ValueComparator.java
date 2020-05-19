@@ -1,4 +1,4 @@
-package me.elb1to.frozedsg.utils;
+package club.frozed.frozedsg.utils;
 
 import java.util.Comparator;
 import java.util.Map;

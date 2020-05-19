@@ -1,8 +1,8 @@
-package me.elb1to.frozedsg.utils.board;
+package club.frozed.frozedsg.utils.board;
 
+import club.frozed.frozedsg.PotSG;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import me.elb1to.frozedsg.PotSG;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

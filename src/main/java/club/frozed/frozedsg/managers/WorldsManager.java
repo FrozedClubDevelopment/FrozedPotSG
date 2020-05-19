@@ -1,9 +1,9 @@
-package me.elb1to.frozedsg.managers;
+package club.frozed.frozedsg.managers;
 
+import club.frozed.frozedsg.PotSG;
 import lombok.Data;
 import lombok.Getter;
-import me.elb1to.frozedsg.PotSG;
-import me.elb1to.frozedsg.events.SGWorldLoad;
+import club.frozed.frozedsg.events.SGWorldLoad;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
