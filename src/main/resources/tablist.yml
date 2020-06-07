@@ -13,10 +13,23 @@ isInLobby:
   player_info: "&3&lPlayer Info"
   top5wins: "&3&lTop 5 Wins"
   location: "&3&lLocation"
+  ###############################
+  yourName: "&fName: &b<playerName>"
+  serverName: "&fName: &b<server_name>"
+  playersAmount: "&fPlayers: &b<countdown_players>"
+  maxPlayersAmount: "&fMax Players: &b<max_players>"
+  requiredPlayers: "&fRequired: &b<require_players>"
+  killsAmount: "&fKills: &b<playerKills>"
+  deathsAmount: "&fDeaths: &b<playerDeaths>"
+  KDRAmount: "&fKDR: &b<playerKDR>"
+  winsAmount: "&fWins: &b<playerWins>"
 
 isInMatch:
   title: "&b&lFrozedSG"
   server: "&3&lServer"
   players_title: "&3&lPlayers"
   spectators_title: "&3&lSpectators"
-
+  ###############################
+  ingameAmount: "&b<game_players> &falive"
+  serverName: "&fName: &b<server_name>"
+  spectatorsAmount: "&b<spectators_size> &fwatching"
