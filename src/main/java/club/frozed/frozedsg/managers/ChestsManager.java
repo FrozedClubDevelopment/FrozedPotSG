@@ -29,8 +29,7 @@ import java.util.stream.Collectors;
 @Getter
 @Setter
 public class ChestsManager implements Listener {
-    @Getter
-    public static ChestsManager instance;
+    @Getter public static ChestsManager instance;
     private List<Chest> chests = new ArrayList<>();
 
     public ChestsManager() {
@@ -61,8 +60,7 @@ public class ChestsManager implements Listener {
         PotSG.getInstance().getConfiguration("chests").getConfiguration().createSection("CHESTS");
         for (Chest chest : getChests()) {
             if (chest.getItems() != null) {
-                PotSG.getInstance().getConfiguration("chests").getConfiguration().set("CHESTS." + chest.getNumber(),
-                        InventoryToBase64.itemToBase64(chest.getItems()));
+                PotSG.getInstance().getConfiguration("chests").getConfiguration().set("CHESTS." + chest.getNumber(), InventoryToBase64.itemToBase64(chest.getItems()));
             }
         }
         PotSG.getInstance().getConfiguration("chests").save();
@@ -141,7 +139,7 @@ public class ChestsManager implements Listener {
     }
 
     public Inventory chestInventory(Chest chest) {
-        Inventory inv = Bukkit.createInventory(null, 27, Color.translate("&aChest " + chest.getNumber()));
+        Inventory inv = Bukkit.createInventory(null, 27, Color.translate("&bChest " + chest.getNumber()));
 
         if (chest.getItems() != null) {
             inv.setContents(chest.getItems());
@@ -161,10 +159,9 @@ public class ChestsManager implements Listener {
             return;
         }
         ItemStack[] items = event.getInventory().getContents();
-        String number = ChatColor.stripColor(event.getInventory().getTitle()
-                .split(" ")[1]);
+        String number = ChatColor.stripColor(event.getInventory().getTitle().split(" ")[1]);
         updateChestItems(Integer.parseInt(number), items);
         saveChestsToConfig();
-        player.sendMessage(Color.translate("&eYou have successfully saved items for &f'Chest " + number + "'&e."));
+        player.sendMessage(Color.translate("&bYou have successfully saved items for &f'Chest " + number + "'&b."));
     }
 }
