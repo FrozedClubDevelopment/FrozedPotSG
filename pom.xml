@@ -7,7 +7,7 @@
     <groupId>club.frozed.frozedsg</groupId>
     <artifactId>FrozedSG</artifactId>
     <packaging>jar</packaging>
-    <version>4.0</version>
+    <version>4.1</version>
 
     <dependencies>
         <!-- PaperSpigot 1.8 -->
