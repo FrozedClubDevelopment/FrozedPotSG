@@ -8,7 +8,6 @@ import club.frozed.frozedsg.utils.command.Command;
 import club.frozed.frozedsg.utils.command.CommandArgs;
 import org.bukkit.entity.Player;
 
-
 public class SettingsCommand extends BaseCommand {
 
     @Command(name = "settings")
