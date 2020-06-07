@@ -33,7 +33,7 @@ public class StartCountdown extends BukkitRunnable {
 
     public void execute() {
         if (PotSG.getInstance().getConfiguration("config").getBoolean("DEBUG")) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "StartCountdown execute running");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "StartCountdown execute running");
         }
         Utils.broadcastMessage(PotSG.getInstance().getConfiguration("messages").getString("starting-pre-match"), true);
         GameManager.getInstance().setGameState(GameState.PREMATCH);
