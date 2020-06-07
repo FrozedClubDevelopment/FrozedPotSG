@@ -18,9 +18,9 @@ public class ReloadConfigCommand extends BaseCommand {
 
         List<String> names = new ArrayList<>();
         PotSG.getInstance().getFiles().forEach(configFile -> names.add(configFile.getName() + ".yml"));
-        command.getPlayer().sendMessage(Color.translate("&aFiles have been reloaded successfully. &7[&e"
+        command.getPlayer().sendMessage(Color.translate("&aFiles have been reloaded successfully. &7[&b"
         + names.toString().replace("[", "")
                 .replace("]", "")
-                .replace(",", "&7,&e") + "&7]&a."));
+                .replace(",", "&7,&b") + "&7]&a."));
     }
 }
