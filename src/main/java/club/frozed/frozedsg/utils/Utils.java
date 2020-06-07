@@ -114,9 +114,9 @@ public class Utils {
         if (online.size() != 0) {
             Player target = online.get(new Random().nextInt(online.size()));
             player.teleport(target);
-            player.sendMessage(GameManager.getInstance().getGamePrefix() + club.frozed.frozedsg.utils.chat.Color.translate("&eYou've been teleported to &f'" + target.getName() + "'&e."));
+            player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&bYou've been teleported to &f'" + target.getName() + "'&b."));
         } else {
-            player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&eNo players found who are playing this game."));
+            player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&bNo players found who are playing this game."));
         }
     }
 
