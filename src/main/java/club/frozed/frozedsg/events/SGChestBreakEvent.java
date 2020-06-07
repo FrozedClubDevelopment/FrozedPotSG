@@ -10,15 +10,13 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.Inventory;
 
-@Getter
-@Setter
+@Getter @Setter
 public class SGChestBreakEvent extends Event {
     public Player player;
     public PlayerData playerData = null;
     public Location chestLocation;
     public Inventory inventory;
     public static HandlerList handlers = new HandlerList();
-
 
     public SGChestBreakEvent(Player player, Inventory inventory, Location location) {
         this.player = player;
