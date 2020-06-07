@@ -29,7 +29,7 @@ public class PvPCountdown extends BukkitRunnable {
         WorldsManager.getInstance().getGameWorld().setPVP(true);
         Utils.broadcastMessage(PotSG.getInstance().getConfiguration("messages").getString("pvp-enabled"), true);
         if (PotSG.getInstance().getConfiguration("config").getBoolean("DEBUG")) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "PvP is now enable");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "PvP is now enabled");
         }
     }
 
