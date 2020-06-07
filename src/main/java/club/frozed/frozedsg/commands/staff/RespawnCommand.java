@@ -45,7 +45,7 @@ public class RespawnCommand extends BaseCommand {
         targetData.setRespawnInfo(null);
         targetData.setState(PlayerState.INGAME);
 
-        player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&6You've respawned &f'" + target.getName() + "'&6."));
-        target.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&6You've been respawned by &f'" + player.getName() + "'&6."));
+        player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&bYou've respawned &f'" + target.getName() + "'&b."));
+        target.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&bYou've been respawned by &f'" + player.getName() + "'&b."));
     }
 }
