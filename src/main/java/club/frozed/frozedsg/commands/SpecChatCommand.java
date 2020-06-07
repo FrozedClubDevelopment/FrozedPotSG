@@ -1,6 +1,5 @@
 package club.frozed.frozedsg.commands;
 
-
 import club.frozed.frozedsg.managers.GameManager;
 import club.frozed.frozedsg.managers.PlayerDataManager;
 import club.frozed.frozedsg.player.PlayerData;
@@ -16,7 +15,6 @@ public class SpecChatCommand extends BaseCommand {
         Player player = command.getPlayer();
         PlayerData data = PlayerDataManager.getInstance().getByUUID(player.getUniqueId());
         data.setSpecChat(!data.isSpecChat());
-        player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&eYour spectator chat is now "
-        + (data.isSpecChat() ? "&aenabled" : "&cdisabled") + "&e."));
+        player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&7Your spectator chat is now " + (data.isSpecChat() ? "&aenabled" : "&cdisabled") + "&7."));
     }
 }
