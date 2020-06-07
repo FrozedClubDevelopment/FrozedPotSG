@@ -15,8 +15,7 @@ import java.io.IOException;
 
 @Data
 public class WorldsManager {
-    @Getter
-    public static WorldsManager instance;
+    @Getter public static WorldsManager instance;
     private World lobbyWorld = null;
     private World gameWorld = null;
     private World gameWorldForEdit = null;
@@ -25,7 +24,7 @@ public class WorldsManager {
         instance = this;
         handleWorldsCopy();
         if (PotSG.getInstance().getConfiguration("config").getBoolean("DEBUG")) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "registered WorldsManager");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "registered WorldsManager");
         }
     }
 
@@ -43,13 +42,10 @@ public class WorldsManager {
 
     private void handleWorldsCopy() {
         if (PotSG.getInstance().getConfiguration("config").getBoolean("DEBUG")) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "WorldsManager handleWorldsCopy running");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "WorldsManager handleWorldsCopy running");
         }
         String gameWorldName = PotSG.getInstance().getConfiguration("config").getString("WORLDS.GAME");
 
-        //new File(gameWorld, "uid.dat").delete();
-        new File(gameWorldName + "_FOR_USE/uid.dat").delete();
-        new File(gameWorldName + "/uid.dat").delete();
         handleWorldDelete(gameWorldName + "_FOR_USE");
 
         Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(PotSG.getInstance(), () -> {
@@ -64,8 +60,6 @@ public class WorldsManager {
         getGameWorld().save();
         Bukkit.unloadWorld(getGameWorld().getName(), false);
         String gameWorldName = PotSG.getInstance().getConfiguration("config").getString("WORLDS.GAME");
-        new File(gameWorldName + "_FOR_USE/uid.dat").delete();
-        new File(gameWorldName + "/uid.dat").delete();
         handleWorldDelete(gameWorldName);
         Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(PotSG.getInstance(), () -> handleWorldCopy(getGameWorld().getName(), gameWorldName), 20L * 2);
         registerWorlds(false);
@@ -86,29 +80,8 @@ public class WorldsManager {
         Bukkit.unloadWorld(world, true);
         try {
             FileUtils.deleteDirectory(new File(world));
-            new File(gameWorld + "_FOR_USE/uid.dat").delete();
-            new File(gameWorld + "/uid.dat").delete();
         } catch (IOException e) {
             Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "World '" + world + "' doesn't exists!");
         }
     }
-
-    /*private boolean handleDeleteWorld(String world) {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Removing world files from world '" + "'...");
-        ArrayList<String> ignore = new ArrayList<String>(Arrays.asList("uid.dat", "session.dat", "session.lock", "playerdata"));
-        if (!ignore.contains(world.getName())) {
-            if (world.exists()) {
-                File files[] = world.listFiles();
-                for (int i = 0; i < files.length; i++) {
-                    if (files[i].isDirectory()) {
-                        handleDeleteWorld(files[i]);
-                    } else {
-                        files[i].delete();
-                    }
-                }
-            }
-        }
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Files removed from the world '" + "' succesfully!");
-        return (world.delete());
-    }*/
 }
