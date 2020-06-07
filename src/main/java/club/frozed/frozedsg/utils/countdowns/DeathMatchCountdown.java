@@ -35,7 +35,7 @@ public class DeathMatchCountdown extends BukkitRunnable {
         PlayerManager.getInstance().getGamePlayers().forEach(player -> player.teleport(getDLocation()));
         BorderManager.getInstance().getBorder().setSize(15);
         if (PotSG.getInstance().getConfiguration("config").getBoolean("DEBUG")) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Deathmatch has been started");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "Deathmatch has been started");
         }
     }
 
