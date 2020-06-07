@@ -23,7 +23,7 @@ public class JumpToPageButton extends Button {
         ItemStack itemStack = new ItemStack(this.current ? Material.ENCHANTED_BOOK : Material.BOOK, this.page);
         ItemMeta itemMeta = itemStack.getItemMeta();
 
-        itemMeta.setDisplayName(Color.translate("&ePage " + this.page));
+        itemMeta.setDisplayName(Color.translate("&bPage " + this.page));
 
         if (this.current) {
             itemMeta.setLore(Color.translate(Arrays.asList(
