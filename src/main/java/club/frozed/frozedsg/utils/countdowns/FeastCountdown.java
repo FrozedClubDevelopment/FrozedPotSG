@@ -29,7 +29,7 @@ public class FeastCountdown extends BukkitRunnable {
         Utils.broadcastMessage(PotSG.getInstance().getConfiguration("messages").getString("feast-spawned"), true);
 
         if (PotSG.getInstance().getConfiguration("config").getBoolean("DEBUG")) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Feasts is spawning");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "Feasts is spawning");
         }
     }
 
