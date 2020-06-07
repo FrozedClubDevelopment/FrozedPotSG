@@ -15,6 +15,7 @@ import org.bukkit.entity.Player;
 @Getter
 @Setter
 public class BorderManager {
+
     @Getter
     public static BorderManager instance;
     private Border border;
@@ -39,7 +40,9 @@ public class BorderManager {
     }
 
     public String getBorderInfo() {
-        if (this.border == null) { return "";}
+        if (this.border == null) {
+            return "";
+        }
 
         if (this.border.getSize() == this.border.getLastBorder()) {
             return "";
@@ -62,62 +65,51 @@ public class BorderManager {
         int size = border.getSize();
         World w = player.getWorld();
 
-        if (!w.getName().equals(Bukkit.getWorld("world").getName())) {
+        //if (!w.getName().equals(Bukkit.getWorld("world").getName())) {
+        if (w.getName().equals("world")) {
             if (w.getEnvironment().equals(World.Environment.NETHER)) {
                 return;
             }
+
             if (player.getLocation().getBlockX() > size) {
-                player.teleport(new Location(w, (size - 2), player.getLocation().getBlockY(),
-                        player.getLocation().getBlockZ()));
+                player.teleport(new Location(w, (size - 2), player.getLocation().getBlockY(), player.getLocation().getBlockZ()));
                 player.setVelocity(player.getLocation().getDirection().multiply(1.0D));
-                if (player.getLocation().getBlockY() < w.getHighestBlockYAt(player.getLocation().getBlockX(),
-                        player.getLocation().getBlockZ())) {
-                    player.teleport(new Location(w, player.getLocation().getBlockX(),
-                            (w.getHighestBlockYAt(player.getLocation().getBlockX(), player.getLocation().getBlockZ())
-                                    + 2),
-                            player.getLocation().getBlockZ()));
+                if (player.getLocation().getBlockY() < w.getHighestBlockYAt(player.getLocation().getBlockX(), player.getLocation().getBlockZ())) {
+                    player.teleport(new Location(w, player.getLocation().getBlockX(), (w.getHighestBlockYAt(player.getLocation().getBlockX(),
+                            player.getLocation().getBlockZ()) + 2), player.getLocation().getBlockZ()));
                 }
                 player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
                 player.playSound(player.getLocation(), Sound.EXPLODE, 1F, 1F);
                 player.spigot().setCollidesWithEntities(true);
             }
+
             if (player.getLocation().getBlockZ() > size) {
-                player.teleport(new Location(w, player.getLocation().getBlockX(), player.getLocation().getBlockY(),
-                        (size - 2)));
-                if (player.getLocation().getBlockY() < w.getHighestBlockYAt(player.getLocation().getBlockX(),
-                        player.getLocation().getBlockZ())) {
-                    player.teleport(new Location(w, player.getLocation().getBlockX(),
-                            (w.getHighestBlockYAt(player.getLocation().getBlockX(), player.getLocation().getBlockZ())
-                                    + 2),
-                            player.getLocation().getBlockZ()));
+                player.teleport(new Location(w, player.getLocation().getBlockX(), player.getLocation().getBlockY(), (size - 2)));
+                if (player.getLocation().getBlockY() < w.getHighestBlockYAt(player.getLocation().getBlockX(), player.getLocation().getBlockZ())) {
+                    player.teleport(new Location(w, player.getLocation().getBlockX(), (w.getHighestBlockYAt(player.getLocation().getBlockX(),
+                            player.getLocation().getBlockZ()) + 2), player.getLocation().getBlockZ()));
                 }
                 player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
                 player.playSound(player.getLocation(), Sound.EXPLODE, 1F, 1F);
                 player.spigot().setCollidesWithEntities(true);
             }
+
             if (player.getLocation().getBlockX() < -size) {
-                player.teleport(new Location(w, (-size + 2), player.getLocation().getBlockY(),
-                        player.getLocation().getBlockZ()));
-                if (player.getLocation().getBlockY() < w.getHighestBlockYAt(player.getLocation().getBlockX(),
-                        player.getLocation().getBlockZ())) {
-                    player.teleport(new Location(w, player.getLocation().getBlockX(),
-                            (w.getHighestBlockYAt(player.getLocation().getBlockX(), player.getLocation().getBlockZ())
-                                    + 2),
-                            player.getLocation().getBlockZ()));
+                player.teleport(new Location(w, (-size + 2), player.getLocation().getBlockY(), player.getLocation().getBlockZ()));
+                if (player.getLocation().getBlockY() < w.getHighestBlockYAt(player.getLocation().getBlockX(), player.getLocation().getBlockZ())) {
+                    player.teleport(new Location(w, player.getLocation().getBlockX(), (w.getHighestBlockYAt(player.getLocation().getBlockX(),
+                            player.getLocation().getBlockZ()) + 2), player.getLocation().getBlockZ()));
                 }
                 player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
                 player.playSound(player.getLocation(), Sound.EXPLODE, 1F, 1F);
                 player.spigot().setCollidesWithEntities(true);
             }
+
             if (player.getLocation().getBlockZ() < -size) {
-                player.teleport(new Location(w, player.getLocation().getBlockX(), player.getLocation().getBlockY(),
-                        (-size + 2)));
-                if (player.getLocation().getBlockY() < w.getHighestBlockYAt(player.getLocation().getBlockX(),
-                        player.getLocation().getBlockZ())) {
-                    player.teleport(new Location(w, player.getLocation().getBlockX(),
-                            (w.getHighestBlockYAt(player.getLocation().getBlockX(), player.getLocation().getBlockZ())
-                                    + 2),
-                            player.getLocation().getBlockZ()));
+                player.teleport(new Location(w, player.getLocation().getBlockX(), player.getLocation().getBlockY(), (-size + 2)));
+                if (player.getLocation().getBlockY() < w.getHighestBlockYAt(player.getLocation().getBlockX(), player.getLocation().getBlockZ())) {
+                    player.teleport(new Location(w, player.getLocation().getBlockX(), (w.getHighestBlockYAt(player.getLocation().getBlockX(),
+                            player.getLocation().getBlockZ()) + 2), player.getLocation().getBlockZ()));
                 }
                 player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
                 player.playSound(player.getLocation(), Sound.EXPLODE, 1F, 1F);
