@@ -247,12 +247,10 @@ public class GameManager {
         }
 
         //MAKING WALLS
-
         int size = 15;
         Location centerLocation = new Location(w, 0, w.getHighestBlockYAt(0, 0), 0);
 
         //MAKING BUTTON LAYER
-
         for (int i = 1; i < 1 + 1; i++) {
             for (int x = centerLocation.getBlockX() - size; x <= centerLocation.getBlockX() + size; ++x) {
                 for (int y = 58; y <= 58; ++y) {
@@ -269,7 +267,6 @@ public class GameManager {
         }
 
         //MAKING BEETWEEN
-
         for (int i = 4; i < 4 + 4; i++) {
             for (int x = centerLocation.getBlockX() - size; x <= centerLocation.getBlockX() + size; ++x) {
                 for (int y = 58; y <= 58; ++y) {
@@ -286,7 +283,6 @@ public class GameManager {
         }
 
         //MAKING BEETWEEN
-
         for (int i = 1; i < 1 + 1; i++) {
             for (int x = centerLocation.getBlockX() - size; x <= centerLocation.getBlockX() + size; ++x) {
                 for (int y = 58; y <= 58; ++y) {
