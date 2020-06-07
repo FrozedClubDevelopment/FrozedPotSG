@@ -21,9 +21,9 @@ public class DataCommand extends BaseCommand {
         String[] args = command.getArgs();
 
         if (args.length == 1 && args[0].equals("update-leaderboards")) {
-            player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&aUpdating leaderboards..."));
+            player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&bUpdating leaderboards..."));
             LeaderboardManager.getInstance().updateAllLeaderboards();
-            player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&aAll leaderboards have been updated."));
+            player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&bAll leaderboards have been updated."));
             return;
         }
         if (args.length == 1 && args[0].equals("dropAll")) {
@@ -47,17 +47,17 @@ public class DataCommand extends BaseCommand {
             LeaderboardManager.getInstance().updateAllLeaderboards();
             PlayerDataManager.getInstance().getPlayerDatas().clear();
             Utils.getOnlinePlayers().forEach(online -> PlayerDataManager.getInstance().handleCreateData(online.getUniqueId()));
-            player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&eYou have dropped all data collections stored on Mongo for SG."));
+            player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&bYou have dropped all data collections stored on Mongo for SG."));
             return;
         }
         if (args.length < 4) {
             player.sendMessage(Color.translate("&7&m-------------------------------------"));
-            player.sendMessage(Color.translate("&6&lAvailable Commands&7:"));
-            player.sendMessage(Color.translate("&e/data update-leaderboards &7- &fupdate leaderboards"));
-            player.sendMessage(Color.translate("&e/data dropAll &7- &fdrop all data and statistics (can't be undone)"));
+            player.sendMessage(Color.translate("&3&lAvailable Commands&7:"));
+            player.sendMessage(Color.translate("&7 * &b/data update-leaderboards &7- &fupdate leaderboards"));
+            player.sendMessage(Color.translate("&7 * &b/data dropAll &7- &fdrop all data and statistics (can't be undone)"));
             player.sendMessage(Color.translate("&8"));
             LeaderboardManager.getInstance().getLeaderboardList().forEach(leaderboard -> {
-                player.sendMessage(Color.translate("&e/data <player> set " + leaderboard.getMongoValue() + " <number> &7- &fset players " + leaderboard.getMongoValue() + "&a."));
+                player.sendMessage(Color.translate("&7 * &b/data <player> set " + leaderboard.getMongoValue() + " <number> &7- &fset players " + leaderboard.getMongoValue() + "&7."));
 
             });
             player.sendMessage(Color.translate("&7&m-------------------------------------"));
@@ -90,7 +90,7 @@ public class DataCommand extends BaseCommand {
                 return;
             }
             PlayerDataManager.getInstance().saveData(targetData, (GameManager.getInstance().isServerPremium() ? targetData.getUuid().toString() : targetData.getName()), args[2], Integer.parseInt(args[3]));
-            player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&eYou've set " + args[2] + " of &f'" + target.getName() + "' &eto &f" + args[3] + "&e."));
+            player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&bYou've set " + args[2] + " of &f'" + target.getName() + "' &bto &f" + args[3] + "&b."));
         }
     }
 
