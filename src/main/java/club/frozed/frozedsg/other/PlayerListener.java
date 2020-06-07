@@ -3,6 +3,7 @@ package club.frozed.frozedsg.other;
 import club.frozed.frozedsg.PotSG;
 import club.frozed.frozedsg.border.Border;
 import club.frozed.frozedsg.border.BorderManager;
+import club.frozed.frozedsg.enums.GameState;
 import club.frozed.frozedsg.enums.PlayerState;
 import club.frozed.frozedsg.events.*;
 import club.frozed.frozedsg.managers.*;
@@ -13,9 +14,6 @@ import club.frozed.frozedsg.utils.RespawnInfo;
 import club.frozed.frozedsg.utils.Utils;
 import club.frozed.frozedsg.utils.chat.Color;
 import club.frozed.frozedsg.utils.countdowns.RebootCountdown;
-import club.frozed.frozedsg.enums.GameState;
-import club.frozed.frozedsg.events.*;
-import club.frozed.frozedsg.managers.*;
 import club.frozed.frozedsg.utils.tasks.SplitedRoadProcessor;
 import org.bukkit.*;
 import org.bukkit.block.Block;
@@ -58,7 +56,7 @@ public class PlayerListener implements Listener {
         player.recalculatePermissions();
 
         if (PotSG.getInstance().isPluginLoading() || WorldsManager.getInstance().getLobbyWorld() == null) {
-            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("loading-server"))
+            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, Color.translate(PotSG.getInstance().getConfiguration("messages").getString("loading-server"))
                     .replaceAll("<server>", GameManager.getInstance().getServerName())
             );
         }
@@ -66,9 +64,9 @@ public class PlayerListener implements Listener {
             return;
         }
         if (gameManager.getGameState().equals(GameState.INGAME)) {
-            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("already-started")));
+            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, Color.translate(PotSG.getInstance().getConfiguration("messages").getString("already-started")));
         } else if (gameManager.getGameState().equals(GameState.ENDING)) {
-            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("game-end")));
+            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, Color.translate(PotSG.getInstance().getConfiguration("messages").getString("game-end")));
         }
     }
 
@@ -119,11 +117,11 @@ public class PlayerListener implements Listener {
         Player player = event.getPlayer();
         if (PotSG.getInstance().isPluginLoading() || WorldsManager.getInstance().getLobbyWorld() == null) {
             if (!GameManager.getInstance().isToUseLobby()) {
-                player.kickPlayer(club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("loading-server"))
+                player.kickPlayer(Color.translate(PotSG.getInstance().getConfiguration("messages").getString("loading-server"))
                         .replaceAll("<server>", GameManager.getInstance().getServerName())
                 );
             } else {
-                player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("loading-server"))
+                player.sendMessage(Color.translate(PotSG.getInstance().getConfiguration("messages").getString("loading-server"))
                         .replaceAll("<server>", GameManager.getInstance().getServerName())
                 );
                 Utils.connectPlayer(player, GameManager.getInstance().getLobbyFallbackServer());
@@ -138,8 +136,7 @@ public class PlayerListener implements Listener {
             player.teleport(GameManager.getInstance().getLobbyLocation());
             player.getInventory().clear();
             GameManager.getInstance().handleLobbyItems(player);
-            PotSG.getInstance().getConfiguration("messages").getStringList("join-message")
-                    .forEach(message -> player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(message.replace("<player>", player.getName()))));
+            PotSG.getInstance().getConfiguration("messages").getStringList("join-message").forEach(message -> player.sendMessage(Color.translate(message.replace("<player>", player.getName()))));
         } else if (GameManager.getInstance().getGameState().equals(GameState.INGAME)) {
             PlayerManager.getInstance().setSpectating(player);
         } else if (GameManager.getInstance().getGameState().equals(GameState.PREMATCH)) {
@@ -150,7 +147,7 @@ public class PlayerListener implements Listener {
             data.setState(PlayerState.PREMATCH);
             player.setGameMode(GameMode.SURVIVAL);
             if (GameManager.getInstance().getPrematchCountdown() != null && !GameManager.getInstance().getPrematchCountdown().hasExpired()) {
-                player.sendMessage(GameManager.getInstance().getGamePrefix() + club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("pre-match-countdown"))
+                player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("pre-match-countdown"))
                         .replaceAll("<seconds>", String.valueOf(GameManager.getInstance().getPrematchCountdown().getSecondsLeft()))
                 );
             }
@@ -239,11 +236,12 @@ public class PlayerListener implements Listener {
         if (player.getGameMode().equals(GameMode.CREATIVE) && !PlayerManager.getInstance().isSpectator(player)) {
             return;
         }
+
         PlayerData data = PlayerDataManager.getInstance().getByUUID(player.getUniqueId());
 
         if (!data.getState().equals(PlayerState.INGAME)) {
             event.setCancelled(true);
-            player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("cannot-break-block")));
+            player.sendMessage(Color.translate(PotSG.getInstance().getConfiguration("messages").getString("cannot-break-block")));
         }
     }
 
@@ -257,7 +255,7 @@ public class PlayerListener implements Listener {
 
         if (!data.getState().equals(PlayerState.INGAME)) {
             event.setCancelled(true);
-            player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("cannot-place-block")));
+            player.sendMessage(Color.translate(PotSG.getInstance().getConfiguration("messages").getString("cannot-place-block")));
         }
     }
 
@@ -271,7 +269,7 @@ public class PlayerListener implements Listener {
     @EventHandler(priority = EventPriority.LOWEST)
     public void handlePortalTeleport(PlayerPortalEvent event) {
         event.setCancelled(true);
-        event.getPlayer().sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("cannot-enter-portal")));
+        event.getPlayer().sendMessage(Color.translate(PotSG.getInstance().getConfiguration("messages").getString("cannot-enter-portal")));
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
@@ -281,7 +279,7 @@ public class PlayerListener implements Listener {
 
         if (!data.getState().equals(PlayerState.INGAME)) {
             event.setCancelled(true);
-            player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("cannot-drop-item")));
+            player.sendMessage(Color.translate(PotSG.getInstance().getConfiguration("messages").getString("cannot-drop-item")));
         }
     }
 
@@ -306,7 +304,7 @@ public class PlayerListener implements Listener {
         if (event.getPlayer().getInventory().firstEmpty() == -1) {
             return;
         }
-        event.getPlayer().getInventory().addItem(new ItemStack[] { stack });
+        event.getPlayer().getInventory().addItem(new ItemStack[]{stack});
         event.getItem().remove();
     }
 
@@ -323,7 +321,7 @@ public class PlayerListener implements Listener {
         if (GameManager.getInstance().getGameState() == GameState.INGAME) {
             return;
         }
-        player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(GameManager.getInstance().getGamePrefix() + "&eYou have placed game chest. &fPlease don't put items in it if you want it to work properly!"));
+        player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&bYou have placed game chest. &fPlease don't put items in it if you want it to work properly!"));
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
@@ -345,16 +343,16 @@ public class PlayerListener implements Listener {
                 return;
             }
             if (!player.getGameMode().equals(GameMode.CREATIVE)) {
-                player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate("&aYou must in a Gamemode Creative to break this chest!"));
+                player.sendMessage(Color.translate("&aYou must in a Gamemode Creative to break this chest!"));
                 return;
             }
             if (!player.isSneaking()) {
                 event.setCancelled(true);
-                player.sendMessage(GameManager.getInstance().getGamePrefix() + club.frozed.frozedsg.utils.chat.Color.translate("&ePlease sneak if you want to break this chest"));
+                player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&bPlease sneak if you want to break this chest"));
                 return;
             }
             inv.clear();
-            player.sendMessage(GameManager.getInstance().getGamePrefix() + club.frozed.frozedsg.utils.chat.Color.translate("&eYou have broke this chest. Items have been cleared!"));
+            player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&bYou have broke this chest. Items have been cleared!"));
         }
     }
 
@@ -450,11 +448,11 @@ public class PlayerListener implements Listener {
             }
             if (targetp != null) {
                 player.setCompassTarget(targetp.getLocation());
-                player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("tracking-player"))
+                player.sendMessage(Color.translate(PotSG.getInstance().getConfiguration("messages").getString("tracking-player"))
                         .replaceAll("<target>", targetp.getName())
                 );
             } else {
-                player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("tracking-player-failed")));
+                player.sendMessage(Color.translate(PotSG.getInstance().getConfiguration("messages").getString("tracking-player-failed")));
             }
         }
     }
@@ -559,7 +557,6 @@ public class PlayerListener implements Listener {
     }
 
 
-
     @EventHandler(priority = EventPriority.LOWEST)
     public void handleChestOpen(PlayerInteractEvent event) {
         Player player = event.getPlayer();
@@ -606,7 +603,7 @@ public class PlayerListener implements Listener {
         if (data.getEnderpearlCooldown() != null && !data.getEnderpearlCooldown().hasExpired()) {
             event.setUseItemInHand(Event.Result.DENY);
             player.updateInventory();
-            player.sendMessage(GameManager.getInstance().getGamePrefix() + club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("cannot-use-enderpearl"))
+            player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("cannot-use-enderpearl"))
                     .replaceAll("<enderpearl_cooldown>", String.valueOf(data.getEnderpearlCooldown().getMiliSecondsLeft()))
             );
         } else {
@@ -642,7 +639,7 @@ public class PlayerListener implements Listener {
                     player.spigot().respawn();
 
                     PlayerManager.getInstance().setSpectating(player);
-                    player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(GameManager.getInstance().getGamePrefix() + PotSG.getInstance().getConfiguration("messages").getString("become-spectator")));
+                    player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + PotSG.getInstance().getConfiguration("messages").getString("become-spectator")));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -661,7 +658,7 @@ public class PlayerListener implements Listener {
                 killerData.getKillStreak().setAmount(killerData.getGameKills().getAmount());
             }
 
-            killer.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("add-points-because-kill"))
+            killer.sendMessage(Color.translate(PotSG.getInstance().getConfiguration("messages").getString("add-points-because-kill"))
                     .replaceAll("<points>", String.valueOf(points))
             );
         }
@@ -684,7 +681,7 @@ public class PlayerListener implements Listener {
         Player player = event.getPlayer();
         PlayerData data = event.getPlayerData();
         data.getWins().increaseAmount(1);
-        player.sendMessage(club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("add-points-because-win"))
+        player.sendMessage(Color.translate(PotSG.getInstance().getConfiguration("messages").getString("add-points-because-win"))
                 .replaceAll("<points>", String.valueOf(GameManager.getInstance().getPointsPerWin()))
         );
         data.getPoints().increaseAmount(GameManager.getInstance().getPointsPerWin());
@@ -722,18 +719,18 @@ public class PlayerListener implements Listener {
 
         PlayerDataManager.getInstance().getPlayerDatas().values().forEach(PlayerData::save);
         int size = PlayerDataManager.getInstance().getPlayerDatas().size();
-        Bukkit.getConsoleSender().sendMessage(club.frozed.frozedsg.utils.chat.Color.translate("&7&m-----------------------------------"));
-        Bukkit.getConsoleSender().sendMessage(club.frozed.frozedsg.utils.chat.Color.translate("&aSuccessfully saved &f" + size + " data " + (size > 1 ? "files" : "file") + "&a."));
-        Bukkit.getConsoleSender().sendMessage(club.frozed.frozedsg.utils.chat.Color.translate("&7&m-----------------------------------"));
+        Bukkit.getConsoleSender().sendMessage(Color.translate("&7&m-----------------------------------"));
+        Bukkit.getConsoleSender().sendMessage(Color.translate("&aSuccessfully saved &f" + size + " data " + (size > 1 ? "files" : "file") + "&a."));
+        Bukkit.getConsoleSender().sendMessage(Color.translate("&7&m-----------------------------------"));
     }
 
     @EventHandler
     public void onSGWorldLoad(SGWorldLoad event) {
         if (PotSG.getInstance().getConfiguration("config").getBoolean("ROADS.MAKE-ROADS")) {
-            Bukkit.getConsoleSender().sendMessage(club.frozed.frozedsg.utils.chat.Color.translate("&b[FrozedSG] &aRoad process has begun."));
+            Bukkit.getConsoleSender().sendMessage(Color.translate("&b[FrozedSG] &aRoad process has begun."));
             new SplitedRoadProcessor(PotSG.getInstance(), event.getCenterLocation(), 15000, 2).run();
         } else {
-            Bukkit.getConsoleSender().sendMessage(club.frozed.frozedsg.utils.chat.Color.translate("&b[FrozedSG] &aPlayers are now able to join the server."));
+            Bukkit.getConsoleSender().sendMessage(Color.translate("&b[FrozedSG] &aPlayers are now able to join the server."));
             PotSG.getInstance().setPluginLoading(false);
         }
     }
@@ -743,7 +740,7 @@ public class PlayerListener implements Listener {
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
             final BlockState state = event.getClickedBlock().getState();
             if (state instanceof BrewingStand) {
-                GameManager.getInstance().getActiveBrewingStands().put(state.getLocation(), (BrewingStand)state);
+                GameManager.getInstance().getActiveBrewingStands().put(state.getLocation(), (BrewingStand) state);
             }
         }
     }
@@ -767,22 +764,22 @@ public class PlayerListener implements Listener {
         double z = event.getTo().getZ();
         if (x >= size) {
             player.teleport(event.getFrom());
-            player.sendMessage(GameManager.getInstance().getBorderPrefix() + club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
+            player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
             event.setCancelled(true);
         }
         if (z >= size) {
             player.teleport(event.getFrom());
-            player.sendMessage(GameManager.getInstance().getBorderPrefix() + club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
+            player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
             event.setCancelled(true);
         }
         if (x <= -size) {
             player.teleport(event.getFrom());
-            player.sendMessage(GameManager.getInstance().getBorderPrefix() + club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
+            player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
             event.setCancelled(true);
         }
         if (z <= -size) {
             player.teleport(event.getFrom());
-            player.sendMessage(GameManager.getInstance().getBorderPrefix() + club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
+            player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
             event.setCancelled(true);
         }
     }
@@ -806,26 +803,22 @@ public class PlayerListener implements Listener {
         }
         if (X >= size) {
             player.teleport(event.getFrom());
-            player.sendMessage(GameManager.getInstance().getBorderPrefix()
-                    + club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
+            player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
             BorderManager.getInstance().checkBorder(player);
         }
         if (Z >= size) {
             player.teleport(event.getFrom());
-            player.sendMessage(GameManager.getInstance().getBorderPrefix()
-                    + club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
+            player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
             BorderManager.getInstance().checkBorder(player);
         }
         if (X <= -size) {
             player.teleport(event.getFrom());
-            player.sendMessage(GameManager.getInstance().getBorderPrefix()
-                    + club.frozed.frozedsg.utils.chat.Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
+            player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
             BorderManager.getInstance().checkBorder(player);
         }
         if (Z <= -size) {
             player.teleport(event.getFrom());
-            player.sendMessage(GameManager.getInstance().getBorderPrefix()
-                    + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
+            player.sendMessage(GameManager.getInstance().getBorderPrefix() + Color.translate(PotSG.getInstance().getConfiguration("messages").getString("stay-in-border")));
             BorderManager.getInstance().checkBorder(player);
         }
     }
