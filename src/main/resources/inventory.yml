@@ -5,9 +5,9 @@
 enabled: "&r  &a▶ &7Enabled"
 disabled: "&r  &c▶ &7Disabled"
 settings-inventory:
-  title: "&ePlayer Settings"
+  title: "&bPlayer Settings"
   size: 9
-  name: "&6&l<name>"
+  name: "&3&l<name>"
   # Available placeholders for 'info-status'
   # <name> - This will show the name of the setting (i.e: ChestClick)
   # <settings_status> - This will show either enabled or disabled
@@ -53,92 +53,85 @@ settings-inventory:
   not-enough-points-lore:
   - " "
   - "&7You don't have enough points."
-  - "&7This requires &e<required_points> &7points and"
-  - "&7you still require &e<needed_points> &7more!"
+  - "&7This requires &b<required_points> &7points and"
+  - "&7you still require &b<needed_points> &7more!"
 
 leaderboard-inventory:
-  title: "&eLeaderboard"
-  name: "&6<name>"
+  title: "&bLeaderboard"
+  name: "&3<name>"
   empty-leaderboard:
   - "&7&m-----------------------"
-  - "&eThis leaderboard is"
-  - "&ecurrently empty."
+  - "&bThis leaderboard is"
+  - "&bcurrently empty."
   - "&7&m-----------------------"
 
 stats-inventory:
   title: "&7Stats: &a<target>"
   combat:
-    name: "&6Combat"
+    name: "&3Combat"
     lore:
     - "&7&m-----------------------"
-    - "&7Kills&7: &6<target_kills>"
-    - " "
-    - "&7Deaths&7: &6<target_deaths>"
-    - " "
-    - "&7KDR&7: &6<target_kdr>"
+    - "&fKills&7: &b<target_kills>"
+    - "&fDeaths&7: &b<target_deaths>"
+    - "&fKDR&7: &b<target_kdr>"
     - "&7&m-----------------------"
 
   misc:
-    name: "&6Misc"
+    name: "&3Misc"
     lore:
     - "&7&m-----------------------"
-    - "&7Games Played&7: &6<target_games_played>"
-    - " "
-    - "&7Wins&7: &6<target_wins>"
-    - " "
-    - "&7Points&7: &6<target_points>"
+    - "&fGames Played&7: &b<target_games_played>"
+    - "&fWins&7: &b<target_wins>"
+    - "&fPoints&7: &b<target_points>"
     - "&7&m-----------------------"
 
   potion:
-    name: "&6Potion"
+    name: "&3Potion"
     lore:
     - "&7&m-----------------------"
-    - "&7Potion splashed&7: &6<target_potion_splashed>"
-    - " "
-    - "&7Potion splashed&7: &6<target_potion_drank>"
+    - "&fPotion splashed&7: &b<target_potion_splashed>"
+    - "&fPotion splashed&7: &b<target_potion_drank>"
     - "&7&m-----------------------"
 
   other:
-    name: "&6Other"
+    name: "&3Other"
     lore:
     - "&7&m-----------------------"
-    - "&7Golden apples eaten&7: &6<target_golden_apples_eaten>"
-    - " "
-    - "&7Bow shots&7: &6<target_bow_shots>"
-    - " "
-    - "&7Chest opened&7: &6<target_chest_opened>"
+    - "&fGolden apples eaten&7: &b<target_golden_apples_eaten>"
+    - "&fChest opened&7: &b<target_chest_opened>"
+    - "&fBow shots&7: &b<target_bow_shots>"
     - "&7&m-----------------------"
 
 player-statistics-inventory:
-  title: "&aStatistics"
-  name: "&6<player_name>"
+  title: "&bStatistics"
+  name: "&3<player_name>"
   lore:
   - "&7&m--------------------------"
-  - "&6Kills&7: &f<player_kills>"
-  - "&6Deaths&7: &f<player_deaths>"
-  - "&6KillStreak&7: &f<player_killstreak>"
-  - "&6Wins&7: &f<player_wins>"
-  - "&6Points&7: &f<player_points>"
-  - "&6Games Played&7: &f<player_games_played>"
-  - "&6Golden apples eaten&7: &f<player_golden_apples_eaten>"
-  - "&6Bow shots&7: &f<player_bow_shots>"
-  - "&6Chests opened&7: &f<player_chests_opened>"
-  - "&6Potion splashed&7: &f<player_potion_splashed>"
-  - "&6Potion drank&7: &f<player_potion_drank>"
+  - "&fKills&7: &b<player_kills>"
+  - "&fDeaths&7: &b<player_deaths>"
+  - "&fKillStreak&7: &b<player_killstreak>"
+  - "&fWins&7: &b<player_wins>"
+  - "&fPoints&7: &b<player_points>"
+  - "&fGames Played&7: &b<player_games_played>"
+  - "&fGolden apples eaten&7: &b<player_golden_apples_eaten>"
+  - "&fBow shots&7: &b<player_bow_shots>"
+  - "&fChests opened&7: &b<player_chests_opened>"
+  - "&fPotion splashed&7: &b<player_potion_splashed>"
+  - "&fPotion drank&7: &b<player_potion_drank>"
   - "&7&m--------------------------"
 
   page-button:
     next-page-name: "&aNext page"
-    previous-page-name: "&4Previous page"
-    last-page-name: "&cThis is last page"
-    first-page-name: "&cThis is first page"
+    previous-page-name: "&cPrevious page"
+    last-page-name: "&c&oThis is last page"
+    first-page-name: "&c&oThis is first page"
     lore:
     - "&9Right click to"
     - "&9jump to a page"
 
 player-alive-inventory:
-  title: "&aAlive Players"
-  name: "&6<player_name>"
+  title: "&bPlayers Alive"
+  name: "&3<player_name>"
   lore:
   - "&7Click to teleport"
   - "&7to <player_name>"
@@ -166,4 +159,3 @@ leaderboard:
     enabled: true
   potion-drank:
     enabled: true
-
