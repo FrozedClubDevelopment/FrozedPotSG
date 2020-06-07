@@ -34,8 +34,7 @@ import java.util.List;
 @Setter
 public class PotSG extends JavaPlugin {
 
-    @Getter
-    public static PotSG instance;
+    @Getter public static PotSG instance;
     private CommandFramework framework;
     private List<ConfigFile> files = new ArrayList<>();
     private BoardManager boardManager;
@@ -57,17 +56,16 @@ public class PotSG extends JavaPlugin {
         if (!this.getDescription().getAuthors().contains("FrozedDevelopment") ||
                 !this.getDescription().getAuthors().contains("Elb1to") || !this.getDescription().getAuthors().contains("Scalebound") ||
                 !this.getDescription().getDescription().equals("Minemen/Lunar PotSG Replica") || !this.getDescription().getName().equals("FrozedSG")) {
-            int i;
-            for (i = 0; i < 10; i++) {
+            for (int i = 0; i < 10; i++) {
                 Bukkit.getServer().broadcastMessage(ChatColor.RED + "Why are you changing the");
-                Bukkit.getServer().broadcastMessage(ChatColor.RED + "plugin yml ( ͡° ͜ʖ ͡°)╭∩╮");
+                Bukkit.getServer().broadcastMessage(ChatColor.RED + "plugin.yml ( ͡° ͜ʖ ͡°)╭∩╮");
             }
             System.exit(0);
             Bukkit.shutdown();
         }
 
         if (!isBorderShrinksStreamValid()) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "[FrozedSG]" + ChatColor.RED + " The plugin could not be enabled. Please check your configuration for " + ChatColor.YELLOW + "Border Shrinks Stream.");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "[FrozedSG]" + ChatColor.RED + " The plugin could not be enabled. Please check your configuration for " + ChatColor.AQUA + "Border Shrinks Stream.");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
@@ -119,8 +117,8 @@ public class PotSG extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(Color.translate("&7Version&8: &b" + getDescription().getVersion()));
         Bukkit.getConsoleSender().sendMessage(Color.translate("&7&m--------------------------------------------------------------"));
         Bukkit.getConsoleSender().sendMessage(" ");
-        Bukkit.getConsoleSender().sendMessage(Color.translate("&eChecking your spigot version..."));
-        Bukkit.getConsoleSender().sendMessage(Color.translate("&aSuccess! &eYour Server NMS version: " + getNmsVersion()));
+        Bukkit.getConsoleSender().sendMessage(Color.translate("&bChecking your spigot version..."));
+        Bukkit.getConsoleSender().sendMessage(Color.translate("&aSuccess! &bYour Server NMS version: &f" + getNmsVersion()));
 
         new LeaderboardManager();
         new DataRunnable();
