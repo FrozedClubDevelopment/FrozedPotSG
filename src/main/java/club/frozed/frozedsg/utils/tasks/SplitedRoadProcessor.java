@@ -158,7 +158,7 @@ public class SplitedRoadProcessor extends BukkitRunnable {
                     ++this.processingX;
                 }
                 this.phase = 4;
-                Bukkit.getConsoleSender().sendMessage(Color.translate("&b[FrozedSG] &aRoad process has been finished. &6PLAYERS ARE NOW ABLE TO JOIN THE SERVER."));
+                Bukkit.getConsoleSender().sendMessage(Color.translate("&b[FrozedSG] &aRoad process has been finished. &bPLAYERS ARE NOW ABLE TO JOIN THE SERVER."));
                 PotSG.getInstance().setPluginLoading(false);
             }
             return true;
