@@ -1,12 +1,5 @@
 package club.frozed.frozedsg.listeners;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-
 import club.frozed.frozedsg.border.BorderManager;
 import club.frozed.frozedsg.managers.PlayerDataManager;
 import club.frozed.frozedsg.player.PlayerData;
@@ -17,6 +10,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+
+import java.util.*;
 
 
 public class GlassListener implements Listener {
@@ -42,10 +37,8 @@ public class GlassListener implements Listener {
             return;
         }
         HashSet<Location> set = new HashSet<>();
-        int Firstclosest = closest(player.getLocation().getBlockX(), -BorderManager.getInstance().getBorder().getSize(),
-                BorderManager.getInstance().getBorder().getSize());
-        int Secondclosest = closest(player.getLocation().getBlockZ(), -BorderManager.getInstance().getBorder().getSize(),
-                BorderManager.getInstance().getBorder().getSize());
+        int Firstclosest = closest(player.getLocation().getBlockX(), -BorderManager.getInstance().getBorder().getSize(), BorderManager.getInstance().getBorder().getSize());
+        int Secondclosest = closest(player.getLocation().getBlockZ(), -BorderManager.getInstance().getBorder().getSize(), BorderManager.getInstance().getBorder().getSize());
         boolean first = Math.abs(player.getLocation().getX() - Firstclosest) < 6.0;
         boolean second = Math.abs(player.getLocation().getZ() - Secondclosest) < 6.0;
 
@@ -56,10 +49,7 @@ public class GlassListener implements Listener {
         if (first) {
             for (int i = -4; i < 5; ++i) {
                 for (int j = -5; j < 6; ++j) {
-                    Location location = new Location(player.getLocation().getWorld(),
-                            (double) Firstclosest,
-                            (double) (player.getLocation().getBlockY() + i),
-                            (double) (player.getLocation().getBlockZ() + j));
+                    Location location = new Location(player.getLocation().getWorld(), Firstclosest, player.getLocation().getBlockY() + i, player.getLocation().getBlockZ() + j);
                     if (!set.contains(location) && !location.getBlock().getType().isOccluding()) {
                         set.add(location);
                     }
@@ -69,10 +59,7 @@ public class GlassListener implements Listener {
         if (second) {
             for (int k = -4; k < 5; ++k) {
                 for (int l = -5; l < 6; ++l) {
-                    Location location2 = new Location(player.getLocation().getWorld(),
-                            (double) (player.getLocation().getBlockX() + l),
-                            (double) (player.getLocation().getBlockY() + k),
-                            (double) Secondclosest);
+                    Location location2 = new Location(player.getLocation().getWorld(), player.getLocation().getBlockX() + l, player.getLocation().getBlockY() + k, Secondclosest);
                     if (!set.contains(location2) && !location2.getBlock().getType().isOccluding()) {
                         set.add(location2);
                     }
