@@ -15,7 +15,7 @@ public class FrozedSGCommand extends BaseCommand {
             player.sendMessage(Color.translate("&7&m----------------------------------"));
             player.sendMessage(Color.translate("&7This server is using &b&lFrozed&f&lSG"));
             player.sendMessage(Color.translate("&7Authors&8: &b" + PotSG.getInstance().getDescription().getAuthors()));
-            player.sendMessage(Color.translate("&eVersion&7: &b" + PotSG.getInstance().getDescription().getVersion()));
+            player.sendMessage(Color.translate("&7Version&8: &b" + PotSG.getInstance().getDescription().getVersion()));
             player.sendMessage(Color.translate("&8"));
             player.sendMessage(Color.translate("&b&lFrozedSG Help &7- &fUseful Commands"));
             player.sendMessage(Color.translate("&7* &b/game &8- &fShows all cmds for game management"));
