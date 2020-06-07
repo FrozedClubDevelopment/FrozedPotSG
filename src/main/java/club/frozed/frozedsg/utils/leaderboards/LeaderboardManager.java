@@ -1,6 +1,5 @@
 package club.frozed.frozedsg.utils.leaderboards;
 
-
 import com.mongodb.BasicDBObject;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,8 +23,7 @@ import java.util.List;
 @Getter
 @Setter
 public class LeaderboardManager {
-    @Getter
-    public static LeaderboardManager instance;
+    @Getter public static LeaderboardManager instance;
     private List<Leaderboard> leaderboardList = new ArrayList<>();
     private List<Document> top5Wins = MongoManager.getInstance().getStatsCollection().find().limit(5).sort(new BasicDBObject("wins", -1)).into(new ArrayList<>());
     private List<Document> allStatistics = MongoManager.getInstance().getStatsCollection().find().into(new ArrayList<>());
@@ -65,14 +63,14 @@ public class LeaderboardManager {
 
         ItemBuilder stats = new ItemBuilder(Material.SKULL_ITEM);
         stats.setDurability(3);
-        stats.setName("&eYour Statistics");
+        stats.setName("&3Your Statistics");
         stats.addLoreLine("&7&m-----------------------");
-        stats.addLoreLine("&6Kills&7: &f" + data.getKills().getAmount());
-        stats.addLoreLine("&6Deaths&7: &f" + data.getDeaths().getAmount());
-        stats.addLoreLine("&6Wins&7: &f" + data.getWins().getAmount());
-        stats.addLoreLine("&6Points&7: &f" + data.getPoints().getAmount());
-        stats.addLoreLine("&6Games Played&7: &f" + data.getGamesPlayed().getAmount());
-        stats.addLoreLine("&6KDR&7: &f" + data.getKdr());
+        stats.addLoreLine("&bKills&7: &f" + data.getKills().getAmount());
+        stats.addLoreLine("&bDeaths&7: &f" + data.getDeaths().getAmount());
+        stats.addLoreLine("&bWins&7: &f" + data.getWins().getAmount());
+        stats.addLoreLine("&bPoints&7: &f" + data.getPoints().getAmount());
+        stats.addLoreLine("&bGames Played&7: &f" + data.getGamesPlayed().getAmount());
+        stats.addLoreLine("&bKDR&7: &f" + data.getKdr());
         stats.addLoreLine("&7&m-----------------------");
 
         inv.setItem(13, stats.toItemStack());
