@@ -1,6 +1,5 @@
 package club.frozed.frozedsg.commands.staff;
 
-
 import club.frozed.frozedsg.enums.PlayerState;
 import club.frozed.frozedsg.managers.GameManager;
 import club.frozed.frozedsg.managers.PlayerDataManager;
@@ -29,32 +28,32 @@ public class SpectatorCommand extends BaseCommand {
         Player target = Bukkit.getPlayer(args[1]);
 
         if (target == null) {
-            player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&eWe couldn't find player by name &f'" + args[1] + "'&e."));
+            player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&bWe couldn't find player by name &f'" + args[1] + "'&b."));
             return;
         }
 
         PlayerData data = PlayerDataManager.getInstance().getByUUID(target.getUniqueId());
 
         if (data == null) {
-            player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&eWe couldn't find profile of '" + args[1] + "'"));
+            player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&bWe couldn't find profile of '" + args[1] + "'"));
             return;
         }
 
         if (args[0].equalsIgnoreCase("add")) {
             if (PlayerManager.getInstance().isSpectator(target)) {
-                player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&eIt seems that &f'" + args[1] + "' &eis already spectating!"));
+                player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&bIt seems that &f'" + args[1] + "' &bis already spectating!"));
                 return;
             }
-            Utils.broadcastMessageToSpectators(GameManager.getInstance().getGamePrefix() + "&6&l" + target.getName() + " &ehas been added to spectators by &6&l" + player.getName() + "&e.");
+            Utils.broadcastMessageToSpectators(GameManager.getInstance().getGamePrefix() + "&3&l" + target.getName() + " &bhas been added to spectators by &3&l" + player.getName() + "&b.");
             PlayerManager.getInstance().setSpectating(target);
         }
         if (args[0].equalsIgnoreCase("remove")) {
             if (!PlayerManager.getInstance().isSpectator(target)) {
-                player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&eIt seems that &f'" + args[1] + "' &eis not spectating!"));
+                player.sendMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&bIt seems that &f'" + args[1] + "' &bis not spectating!"));
                 return;
             }
             data.setState(PlayerState.LOBBY);
-            Utils.broadcastMessageToSpectators(GameManager.getInstance().getGamePrefix() + "&6&l" + target.getName() + " &ehas been removed from spectators by &6&l" + player.getName() + "&e.");
+            Utils.broadcastMessageToSpectators(GameManager.getInstance().getGamePrefix() + "&3&l" + target.getName() + " &bhas been removed from spectators by &3&l" + player.getName() + "&b.");
             Utils.clearPlayer(player);
             player.teleport(GameManager.getInstance().getLobbyLocation());
             player.getInventory().clear();
