@@ -22,14 +22,14 @@ public class GameCommand extends BaseCommand {
 
         if (args.length == 0) {
             player.sendMessage(Color.translate("&7&m-----------------------------"));
-            player.sendMessage(Color.translate("&6&lAvailable Commands&7:"));
-            player.sendMessage(Color.translate("&e/game start &7- &fforce start game"));
-            player.sendMessage(Color.translate("&e/game map &7- &fteleport to game map"));
-            player.sendMessage(Color.translate("&e/game savemap &7- &fsave current game map (can't be undone)"));
-            player.sendMessage(Color.translate("&e/game lobby &7- &fteleport to lobby location"));
-            player.sendMessage(Color.translate("&e/game chests &7- &fsetup and edit chests"));
-            player.sendMessage(Color.translate("&e/game spawn darena &7- &fspawn deathmatch arena before game starts (It will not be spawned in game!) (Can't be undone!)"));
-            player.sendMessage(Color.translate("&e/game setgamespawn &7- &fset game map spawn location (also available in config as GAME-CENTER-LOCATION)"));
+            player.sendMessage(Color.translate("&3&lAvailable Commands&7:"));
+            player.sendMessage(Color.translate("&7 * &b/game start &7- &fforce start game"));
+            player.sendMessage(Color.translate("&7 * &b/game map &7- &fteleport to game map"));
+            player.sendMessage(Color.translate("&7 * &b/game savemap &7- &fsave current game map (can't be undone)"));
+            player.sendMessage(Color.translate("&7 * &b/game lobby &7- &fteleport to lobby location"));
+            player.sendMessage(Color.translate("&7 * &b/game chests &7- &fsetup and edit chests"));
+            player.sendMessage(Color.translate("&7 * &b/game spawn darena &7- &fspawn deathmatch arena before game starts (It will not be spawned in game!) (Can't be undone!)"));
+            player.sendMessage(Color.translate("&7 * &b/game setgamespawn &7- &fset game map spawn location (also available in config as GAME-CENTER-LOCATION)"));
             player.sendMessage(Color.translate("&7&m-----------------------------"));
             return;
         }
@@ -37,11 +37,11 @@ public class GameCommand extends BaseCommand {
             switch (args[0]) {
                 case "start": {
                     if (GameManager.getInstance().getStartCountdown() != null && !GameManager.getInstance().getStartCountdown().hasExpired()) {
-                        player.sendMessage(Color.translate("&eStart task is already running! The game will start soon..."));
+                        player.sendMessage(Color.translate("&bStart task is already running! The game will start soon..."));
                         return;
                     }
                     if (!GameManager.getInstance().getGameState().equals(GameState.LOBBY)) {
-                        player.sendMessage(Color.translate("&eYou can only execute this command in lobby state."));
+                        player.sendMessage(Color.translate("&bYou can only execute this command in lobby state."));
                         return;
                     }
                     Utils.broadcastMessage(GameManager.getInstance().getGamePrefix() + Color.translate("&aThe pre-match has been forced to start!"));
@@ -56,7 +56,7 @@ public class GameCommand extends BaseCommand {
                 }
                 /*case "getchest": {
                     player.getInventory().addItem(GameManager.getInstance().getChestItem());
-                    player.sendMessage(Color.translate("&eYou have received a new &f'Custom Chest'. Read lore of chest for instructions!"));
+                    player.sendMessage(Color.translate("&bYou have received a new &f'Custom Chest'. Read lore of chest for instructions!"));
                     break;
                 }*/
                 case "map": {
@@ -72,7 +72,7 @@ public class GameCommand extends BaseCommand {
                 }
                 case "savemap": {
                     if (!player.getWorld().getName().equalsIgnoreCase(WorldsManager.getInstance().getGameWorld().getName())) {
-                        player.sendMessage(Color.translate("&eYou are not in game map. Please use &f'/game map' &eto teleport to game map!"));
+                        player.sendMessage(Color.translate("&bYou are not in game map. Please use &f'/game map' &bto teleport to game map!"));
                         return;
                     }
                     if (!GameManager.getInstance().getGameState().equals(GameState.LOBBY)) {
@@ -100,7 +100,7 @@ public class GameCommand extends BaseCommand {
                     String toSave = x + ";" + y + ";" + z;
                     PotSG.getInstance().getConfiguration("config").getConfiguration().set("GAME-CENTER-LOCATION", toSave);
                     PotSG.getInstance().getConfiguration("config").save();
-                    player.sendMessage(Color.translate("&eYou have successfully set game map spawn location. &f(" + toSave + ")"));
+                    player.sendMessage(Color.translate("&bYou have successfully set game map spawn location. &f(" + toSave + ")"));
                     break;
                 }
                 default: {
@@ -113,7 +113,7 @@ public class GameCommand extends BaseCommand {
             switch (args[0]) {
                 case "spawn" : {
                     if (args[1].equalsIgnoreCase("darena")) {
-                        player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&eYou've successfully spawned deathmatch arena"));
+                        player.sendMessage(Color.translate(GameManager.getInstance().getGamePrefix() + "&bYou've successfully spawned deathmatch arena"));
                         GameManager.getInstance().spawnDeathMatchArena();
                         GameManager.getInstance().setDeathMatchArenaSpawned(true);
                         break;
