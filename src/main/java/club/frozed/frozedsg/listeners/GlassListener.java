@@ -13,9 +13,9 @@ import org.bukkit.event.player.PlayerMoveEvent;
 
 import java.util.*;
 
-
 public class GlassListener implements Listener {
-    private Map<UUID, Set<Location>> Locations = new HashMap<>();
+
+    private Map<UUID, Set<Location>> glassLocations = new HashMap<>();
 
     public int closest(int n, int... array) {
         int n2 = array[0];
@@ -36,11 +36,12 @@ public class GlassListener implements Listener {
             removeGlass(player);
             return;
         }
+
         HashSet<Location> set = new HashSet<>();
-        int Firstclosest = closest(player.getLocation().getBlockX(), -BorderManager.getInstance().getBorder().getSize(), BorderManager.getInstance().getBorder().getSize());
-        int Secondclosest = closest(player.getLocation().getBlockZ(), -BorderManager.getInstance().getBorder().getSize(), BorderManager.getInstance().getBorder().getSize());
-        boolean first = Math.abs(player.getLocation().getX() - Firstclosest) < 6.0;
-        boolean second = Math.abs(player.getLocation().getZ() - Secondclosest) < 6.0;
+        int firstClosest = closest(player.getLocation().getBlockX(), -BorderManager.getInstance().getBorder().getSize(), BorderManager.getInstance().getBorder().getSize());
+        int secondClosest = closest(player.getLocation().getBlockZ(), -BorderManager.getInstance().getBorder().getSize(), BorderManager.getInstance().getBorder().getSize());
+        boolean first = Math.abs(player.getLocation().getX() - firstClosest) < 6.0;
+        boolean second = Math.abs(player.getLocation().getZ() - secondClosest) < 6.0;
 
         if (!first && !second) {
             removeGlass(player);
@@ -49,7 +50,7 @@ public class GlassListener implements Listener {
         if (first) {
             for (int i = -4; i < 5; ++i) {
                 for (int j = -5; j < 6; ++j) {
-                    Location location = new Location(player.getLocation().getWorld(), Firstclosest, player.getLocation().getBlockY() + i, player.getLocation().getBlockZ() + j);
+                    Location location = new Location(player.getLocation().getWorld(), firstClosest, player.getLocation().getBlockY() + i, player.getLocation().getBlockZ() + j);
                     if (!set.contains(location) && !location.getBlock().getType().isOccluding()) {
                         set.add(location);
                     }
@@ -59,7 +60,7 @@ public class GlassListener implements Listener {
         if (second) {
             for (int k = -4; k < 5; ++k) {
                 for (int l = -5; l < 6; ++l) {
-                    Location location2 = new Location(player.getLocation().getWorld(), player.getLocation().getBlockX() + l, player.getLocation().getBlockY() + k, Secondclosest);
+                    Location location2 = new Location(player.getLocation().getWorld(), player.getLocation().getBlockX() + l, player.getLocation().getBlockY() + k, secondClosest);
                     if (!set.contains(location2) && !location2.getBlock().getType().isOccluding()) {
                         set.add(location2);
                     }
@@ -79,9 +80,9 @@ public class GlassListener implements Listener {
         if (data != null && data.getSettingByName("GlassBorder") != null && !data.getSettingByName("GlassBorder").isEnabled()) {
             return;
         }
-        if (Locations.containsKey(player.getUniqueId())) {
-            Locations.get(player.getUniqueId()).addAll(set);
-            for (Location location : Locations.get(player.getUniqueId())) {
+        if (glassLocations.containsKey(player.getUniqueId())) {
+            glassLocations.get(player.getUniqueId()).addAll(set);
+            for (Location location : glassLocations.get(player.getUniqueId())) {
                 if (!set.contains(location)) {
                     Block block = location.getBlock();
                     player.sendBlockChange(location, block.getTypeId(), block.getData());
@@ -97,16 +98,16 @@ public class GlassListener implements Listener {
                 player.sendBlockChange(iterator3.next(), 95, (byte) 14);
             }
         }
-        Locations.put(player.getUniqueId(), set);
+        glassLocations.put(player.getUniqueId(), set);
     }
 
     public void removeGlass(Player player) {
-        if (Locations.containsKey(player.getUniqueId())) {
-            for (Location location : Locations.get(player.getUniqueId())) {
+        if (glassLocations.containsKey(player.getUniqueId())) {
+            for (Location location : glassLocations.get(player.getUniqueId())) {
                 Block block = location.getBlock();
                 player.sendBlockChange(location, block.getTypeId(), block.getData());
             }
-            Locations.remove(player.getUniqueId());
+            glassLocations.remove(player.getUniqueId());
         }
     }
 
