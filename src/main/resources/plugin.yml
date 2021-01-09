@@ -1,8 +1,5 @@
 name: FrozedSG
-version: 4.1
+version: 4.7
 main: club.frozed.frozedsg.PotSG
 description: Minemen/Lunar PotSG Replica
-authors:
-  - Elb1to
-  - Scalebound
-  - FrozedDevelopment
+authors: [ Elb1to, FrozedClubDevelopment ]

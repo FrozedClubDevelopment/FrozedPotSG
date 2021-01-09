@@ -4,22 +4,33 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>club.frozed.frozedsg</groupId>
+    <groupId>club.frozed</groupId>
     <artifactId>FrozedSG</artifactId>
     <packaging>jar</packaging>
-    <version>4.1</version>
+    <version>4.7</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
 
     <dependencies>
-        <!-- PaperSpigot 1.8 -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>C:/Users/Elb1to/IdeaProjects/libs/PaperSpigot-1.8.8-R0.1-SNAPSHOT.jar</systemPath>
+            <systemPath>${project.basedir}/libs/PaperSpigot-1.8.8.jar</systemPath>
         </dependency>
 
-        <!-- Ziggurat -->
+        <dependency>
+            <groupId>org.inventivetalent.bossbar</groupId>
+            <artifactId>bossbar-api</artifactId>
+            <version>2.4.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/BossBarAPI.jar</systemPath>
+        </dependency>
+
         <dependency>
             <groupId>me.allen</groupId>
             <artifactId>Ziggurat</artifactId>
@@ -27,59 +38,19 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- PaperSpigot 1.7
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.7.10-R0.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>C:/Users/Elb1to/IdeaProjects/libs/PaperSpigot-1.7.10-R0.1-SNAPSHOT.jar</systemPath>
-        </dependency> -->
-
-        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.16</version>
-            <scope>system</scope>
-            <systemPath>C:/Users/Elb1to/IdeaProjects/libs/lombok.jar</systemPath>
+            <version>1.18.12</version>
         </dependency>
 
-        <!-- ProtocolLib -->
-        <dependency>
-            <groupId>com.comphenix.protocol</groupId>
-            <artifactId>ProtocolLib</artifactId>
-            <version>4.4.0</version>
-            <scope>system</scope>
-            <systemPath>C:/Users/Elb1to/IdeaProjects/libs/ProtocolLib-4.4.0.jar</systemPath>
-        </dependency>
-
-        <!-- Mongo -->
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
-            <version>3.10.2</version>
+            <version>3.12.7</version>
+            <scope>compile</scope>
         </dependency>
-
-        <!-- Apache Commons Lang
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
-        </dependency>
-
-         Apache Commons IO
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.6</version>
-        </dependency> -->
     </dependencies>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
 
     <build>
         <defaultGoal>clean install</defaultGoal>
