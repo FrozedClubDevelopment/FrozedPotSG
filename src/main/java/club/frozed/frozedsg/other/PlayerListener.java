@@ -107,7 +107,7 @@ public class PlayerListener implements Listener {
         }
         String format = PotSG.getInstance().getConfiguration("config").getString("CHAT-FORMAT.FORMAT");
         format = format.replace("<player_display_name>", event.getPlayer().getDisplayName());
-        format = format.replace("<message>", event.getMessage());
+        format = format.replace("<message>", event.getMessage().replaceAll("%", "%%").replaceAll("\\$", "\\\\\\$"));
         event.setFormat(format);
     }
 
