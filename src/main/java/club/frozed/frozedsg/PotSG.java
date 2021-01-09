@@ -77,6 +77,7 @@ public class PotSG extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new InventoryHandler(), this);
         Bukkit.getPluginManager().registerEvents(new DeathMessagesListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
+        Bukkit.getPluginManager().registerEvents(new BossBarListener(), this);
 
         //From managers package
         new ChestsManager();
