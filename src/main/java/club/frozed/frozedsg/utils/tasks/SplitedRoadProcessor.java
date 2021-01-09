@@ -6,17 +6,17 @@ import club.frozed.frozedsg.utils.chat.Color;
 import org.apache.commons.lang.math.RandomUtils;
 import org.bukkit.*;
 import org.bukkit.block.Biome;
-import org.bukkit.block.BlockFace;
-
-import java.util.List;
-
 import org.bukkit.block.Block;
-import org.bukkit.entity.Item;
+import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Item;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.List;
+
 public class SplitedRoadProcessor extends BukkitRunnable {
+
     private Location center;
     private Processor processor;
     private JavaPlugin plugin;
@@ -40,7 +40,7 @@ public class SplitedRoadProcessor extends BukkitRunnable {
         if (this.processor.run()) {
             return;
         }
-        new SplitedRoadProcessor(this.plugin, this.center, this.delay, this.processor).runTaskLater(this.plugin, (long) this.delay);
+        new SplitedRoadProcessor(this.plugin, this.center, this.delay, this.processor).runTaskLater(this.plugin, this.delay);
     }
 
     public enum Type {
@@ -74,7 +74,7 @@ public class SplitedRoadProcessor extends BukkitRunnable {
 
         public boolean run() {
             final Chunk centerChunk = this.center.getChunk();
-            final Location centerLocation = new Location(centerChunk.getWorld(), 8.0, (double) this.y, 8.0);
+            final Location centerLocation = new Location(centerChunk.getWorld(), 8.0, this.y, 8.0);
             this.processedBlockThisTick = 0;
             if (this.phase == 0) {
                 this.processingZ = -1 * this.length;
@@ -107,7 +107,7 @@ public class SplitedRoadProcessor extends BukkitRunnable {
                 for (int x = -32; x < 32; ++x) {
                     for (int z2 = -32; z2 < 32; ++z2) {
                         ++this.processedBlockThisTick;
-                        final Location newlocation = new Location(centerChunk.getWorld(), (double) (8 + x), (double) this.y, (double) (8 + z2));
+                        final Location newlocation = new Location(centerChunk.getWorld(), 8 + x, this.y, 8 + z2);
                         final int diff = (int) (newlocation.distance(centerLocation) - 24.0);
                         if (diff < 0) {
                             this.clearAbove(chunk.getWorld(), x + 8, this.y, z2 + 8);
