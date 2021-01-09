@@ -23,24 +23,30 @@ public class RespawnCommand extends BaseCommand {
             player.sendMessage(Color.translate("&cCorrect usage: /respawn <playerName>"));
             return;
         }
+
         Player target = Bukkit.getPlayer(args[0]);
         if (target == null) {
             player.sendMessage(Color.translate("&cThat player is currently offline."));
             return;
         }
+
         PlayerData targetData = PlayerDataManager.getInstance().getByUUID(target.getUniqueId());
         if (targetData == null) {
             player.sendMessage(Color.translate("&cData of that player couldn't be found."));
             return;
         }
+
         if (targetData.getRespawnInfo() == null) {
             player.sendMessage(Color.translate("&cFailed to find respawn informations for '" + args[0] + "'."));
             return;
         }
+
         Utils.clearPlayer(target);
         target.teleport(targetData.getRespawnInfo().getLocation());
         target.getInventory().setContents(targetData.getRespawnInfo().getInventory());
         target.getInventory().setArmorContents(targetData.getRespawnInfo().getArmor());
+        target.setFlying(false);
+        target.setAllowFlight(false);
         target.updateInventory();
         targetData.setRespawnInfo(null);
         targetData.setState(PlayerState.INGAME);
