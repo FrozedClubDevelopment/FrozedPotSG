@@ -2,13 +2,17 @@ package club.frozed.frozedsg.utils.countdowns;
 
 import club.frozed.frozedsg.PotSG;
 import club.frozed.frozedsg.managers.GameManager;
-import club.frozed.frozedsg.utils.Utils;
+import club.frozed.frozedsg.managers.PlayerManager;
 import club.frozed.frozedsg.managers.WorldsManager;
+import club.frozed.frozedsg.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.inventivetalent.bossbar.BossBar;
+import org.inventivetalent.bossbar.BossBarAPI;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,12 +44,20 @@ public class PvPCountdown extends BukkitRunnable {
     public void everySeconds() {
         if (seconds > 60) {
             Utils.broadcastMessage(PotSG.getInstance().getConfiguration("messages").getString("pvp-countdown-minutes")
-                            .replaceAll("<minutes>", String.valueOf(seconds/60))
-                    , true);
+                    .replaceAll("<minutes>", String.valueOf(seconds / 60)), true
+            );
+            /*//Create a new BossBar
+            BossBar bossBar = BossBarAPI.addBar(PlayerManager.getInstance().getGamePlayers(), // The receiver of the BossBar
+                    new TextComponent("Hi " + player.getName() + "!"), // Displayed message
+                    BossBarAPI.Color.BLUE, // Color of the bar
+                    BossBarAPI.Style.NOTCHED_20, // Bar style
+                    1.0f, // Progress (0.0 - 1.0)
+                    20, // Timeout
+                    2); // Timeout-interval*/
         } else {
             Utils.broadcastMessage(PotSG.getInstance().getConfiguration("messages").getString("pvp-countdown-seconds")
-                            .replaceAll("<seconds>", String.valueOf(seconds))
-                    , true);
+                    .replaceAll("<seconds>", String.valueOf(seconds)), true
+            );
         }
     }
 
