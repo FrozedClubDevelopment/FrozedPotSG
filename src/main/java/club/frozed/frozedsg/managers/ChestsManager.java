@@ -1,13 +1,13 @@
 package club.frozed.frozedsg.managers;
 
 import club.frozed.frozedsg.PotSG;
-import club.frozed.frozedsg.utils.ItemBuilder;
-import lombok.Getter;
-import lombok.Setter;
 import club.frozed.frozedsg.utils.Chest;
 import club.frozed.frozedsg.utils.InventoryToBase64;
+import club.frozed.frozedsg.utils.ItemBuilder;
 import club.frozed.frozedsg.utils.Utils;
 import club.frozed.frozedsg.utils.chat.Color;
+import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -26,15 +26,17 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-@Getter
-@Setter
+@Getter @Setter
 public class ChestsManager implements Listener {
+
     @Getter public static ChestsManager instance;
     private List<Chest> chests = new ArrayList<>();
 
     public ChestsManager() {
         instance = this;
+
         PotSG.getInstance().getServer().getPluginManager().registerEvents(this, PotSG.getInstance());
+
         for (int i = 1; i <= 54; i++) {
             if (PotSG.getInstance().getConfiguration("chests").getConfiguration().getConfigurationSection("CHESTS") != null) {
                 if (!PotSG.getInstance().getConfiguration("chests").getConfiguration().getConfigurationSection("CHESTS").contains(String.valueOf(i))) {
@@ -44,6 +46,7 @@ public class ChestsManager implements Listener {
                 chests.add(new Chest(null, i));
             }
         }
+
         loadChestsFromConfig();
     }
 
@@ -63,6 +66,7 @@ public class ChestsManager implements Listener {
                 PotSG.getInstance().getConfiguration("chests").getConfiguration().set("CHESTS." + chest.getNumber(), InventoryToBase64.itemToBase64(chest.getItems()));
             }
         }
+
         PotSG.getInstance().getConfiguration("chests").save();
     }
 
@@ -70,6 +74,7 @@ public class ChestsManager implements Listener {
         if (PotSG.getInstance().getConfiguration("chests").getConfiguration().getConfigurationSection("CHESTS") == null) {
             return;
         }
+
         PotSG.getInstance().getConfiguration("chests").getConfiguration().getConfigurationSection("CHESTS").getKeys(false).forEach(key -> {
             if (Utils.isInteger(key)) {
                 ItemStack[] items = new ItemStack[0];
@@ -85,6 +90,7 @@ public class ChestsManager implements Listener {
 
     public Inventory chestsInventory() {
         fixOrder();
+
         Inventory inv = Bukkit.createInventory(null, 54, Color.translate("Chests"));
 
         chests.forEach(key -> {
@@ -105,6 +111,7 @@ public class ChestsManager implements Listener {
         if (PotSG.getInstance().getConfiguration("chests").getConfiguration().getConfigurationSection("CHESTS") == null) {
             return null;
         }
+
         List<Chest> availableChests = new ArrayList<>();
         PotSG.getInstance().getConfiguration("chests").getConfiguration().getConfigurationSection("CHESTS").getKeys(false).forEach(key -> {
             if (Utils.isInteger(key)) {
@@ -119,6 +126,7 @@ public class ChestsManager implements Listener {
                 }
             }
         });
+
         if (availableChests.size() == 0) {
             return null;
         }
@@ -152,7 +160,7 @@ public class ChestsManager implements Listener {
     public void handleInventoryClose(InventoryCloseEvent event) {
         Player player = (Player) event.getPlayer();
 
-        if (!event.getInventory().getTitle().contains(Color.translate("&aChest "))) {
+        if (!event.getInventory().getTitle().contains(Color.translate("&bChest "))) {
             return;
         }
         if (event.getInventory().getContents() == null) {
@@ -162,6 +170,7 @@ public class ChestsManager implements Listener {
         String number = ChatColor.stripColor(event.getInventory().getTitle().split(" ")[1]);
         updateChestItems(Integer.parseInt(number), items);
         saveChestsToConfig();
+
         player.sendMessage(Color.translate("&bYou have successfully saved items for &f'Chest " + number + "'&b."));
     }
 }

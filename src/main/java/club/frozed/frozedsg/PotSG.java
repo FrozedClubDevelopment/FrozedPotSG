@@ -48,18 +48,11 @@ public class PotSG extends JavaPlugin {
         registerConfigurations();
 
         framework = new CommandFramework(this);
-
         setBoardManager(new BoardManager(this, new BoardLayout()));
-
         new Ziggurat(this, new TablistLayout());
 
-        if (!this.getDescription().getAuthors().contains("FrozedDevelopment") ||
-                !this.getDescription().getAuthors().contains("Elb1to") || !this.getDescription().getAuthors().contains("Scalebound") ||
-                !this.getDescription().getDescription().equals("Minemen/Lunar PotSG Replica") || !this.getDescription().getName().equals("FrozedSG")) {
-            for (int i = 0; i < 10; i++) {
-                Bukkit.getServer().broadcastMessage(ChatColor.RED + "Why are you changing the");
-                Bukkit.getServer().broadcastMessage(ChatColor.RED + "plugin.yml ( ͡° ͜ʖ ͡°)╭∩╮");
-            }
+        if (!this.getDescription().getAuthors().contains("Elb1to") || !this.getDescription().getName().equals("FrozedSG")
+                || !this.getDescription().getAuthors().contains("FrozedClubDevelopment") || !this.getDescription().getDescription().equals("Minemen/Lunar PotSG Replica")) {
             System.exit(0);
             Bukkit.shutdown();
         }
@@ -70,7 +63,6 @@ public class PotSG extends JavaPlugin {
             return;
         }
 
-        //From listeners package
         Bukkit.getPluginManager().registerEvents(new ButtonListener(), this);
         Bukkit.getPluginManager().registerEvents(new ChunkListener(), this);
         Bukkit.getPluginManager().registerEvents(new GlassListener(), this);
@@ -79,7 +71,6 @@ public class PotSG extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
         Bukkit.getPluginManager().registerEvents(new BossBarListener(), this);
 
-        //From managers package
         new ChestsManager();
         new GameManager();
         new InventoryManager();
@@ -88,7 +79,6 @@ public class PotSG extends JavaPlugin {
         new PlayerManager();
         new WorldsManager();
 
-        //From commands package
         new DataCommand();
         new GameCommand();
         new ReloadConfigCommand();
@@ -110,23 +100,14 @@ public class PotSG extends JavaPlugin {
         getServer().getScheduler().scheduleAsyncRepeatingTask(this, new DataSaveTask(), 200L, 200L);
         getServer().getScheduler().scheduleSyncRepeatingTask(this, new BrewingTask(), 1L, 1L);
 
-        checkLicense();
-
         Bukkit.getConsoleSender().sendMessage(Color.translate("&7&m--------------------------------------------------------------"));
         Bukkit.getConsoleSender().sendMessage(Color.translate("&7This server is using &bFrozedSG"));
         Bukkit.getConsoleSender().sendMessage(Color.translate("&7Authors&8: &b" + getDescription().getAuthors()));
         Bukkit.getConsoleSender().sendMessage(Color.translate("&7Version&8: &b" + getDescription().getVersion()));
         Bukkit.getConsoleSender().sendMessage(Color.translate("&7&m--------------------------------------------------------------"));
-        Bukkit.getConsoleSender().sendMessage(" ");
-        Bukkit.getConsoleSender().sendMessage(Color.translate("&bChecking your spigot version..."));
-        Bukkit.getConsoleSender().sendMessage(Color.translate("&aSuccess! &bYour Server NMS version: &f" + getNmsVersion()));
 
         new LeaderboardManager();
         new DataRunnable();
-    }
-
-    private String getNmsVersion() {
-        return Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
     }
 
     public ConfigFile getConfiguration(String name) {
@@ -162,9 +143,5 @@ public class PotSG extends JavaPlugin {
         long interval = this.boardManager.getAdapter().getInterval();
         this.getServer().getScheduler().runTaskTimerAsynchronously(this, this.boardManager, interval, interval);
         this.getServer().getPluginManager().registerEvents(this.boardManager, this);
-    }
-
-    public void checkLicense() {
-
     }
 }
