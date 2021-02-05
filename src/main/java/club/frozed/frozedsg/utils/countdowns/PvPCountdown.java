@@ -2,20 +2,15 @@ package club.frozed.frozedsg.utils.countdowns;
 
 import club.frozed.frozedsg.PotSG;
 import club.frozed.frozedsg.managers.GameManager;
-import club.frozed.frozedsg.managers.PlayerManager;
 import club.frozed.frozedsg.managers.WorldsManager;
 import club.frozed.frozedsg.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.inventivetalent.bossbar.BossBar;
-import org.inventivetalent.bossbar.BossBarAPI;
 
-import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
-
 
 public class PvPCountdown extends BukkitRunnable {
 

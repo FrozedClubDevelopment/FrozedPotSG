@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 
 public class SettingsCommand extends BaseCommand {
 
-    @Command(name = "settings")
+    @Command(name = "settings", aliases = {"gamesettings", "sgsettings", "matchsettings", "playersettings", "psettings"})
     public void onCommand(CommandArgs command) {
         Player player = command.getPlayer();
         PlayerData data = PlayerDataManager.getInstance().getByUUID(player.getUniqueId());

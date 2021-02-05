@@ -7,7 +7,7 @@
     <groupId>club.frozed</groupId>
     <artifactId>FrozedSG</artifactId>
     <packaging>jar</packaging>
-    <version>4.7</version>
+    <version>4.8</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,13 +23,13 @@
             <systemPath>${project.basedir}/libs/PaperSpigot-1.8.8.jar</systemPath>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.inventivetalent.bossbar</groupId>
             <artifactId>bossbar-api</artifactId>
             <version>2.4.1</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/libs/BossBarAPI.jar</systemPath>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>me.allen</groupId>
@@ -50,6 +50,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
