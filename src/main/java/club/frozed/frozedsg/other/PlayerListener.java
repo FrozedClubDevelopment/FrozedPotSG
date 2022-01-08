@@ -607,7 +607,7 @@ public class PlayerListener implements Listener {
                     .replaceAll("<enderpearl_cooldown>", String.valueOf(data.getEnderpearlCooldown().getMiliSecondsLeft()))
             );
         } else {
-            data.setEnderpearlCooldown(new Cooldown(10));
+            data.setEnderpearlCooldown(new Cooldown(PotSG.getInstance().getConfiguration("config").getInt("ENDERPEARL-COOLDOWN")));
         }
     }
 

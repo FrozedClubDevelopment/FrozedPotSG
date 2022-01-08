@@ -143,7 +143,7 @@ public class InventoryHandler implements Listener {
                 player.openInventory(LeaderboardManager.getInstance().getInventory(player));
             }
             if (item.getType().equals(Material.CHEST)) {
-                player.performCommand("settings");
+                player.performCommand("gamesettings");
             }
             if (item.getType().equals(Material.WATCH)) {
                 new LobbyInventoryPlayers().openMenu(player);

@@ -44,7 +44,6 @@ public class PlayerData {
     private boolean specChat = true;
     private List<Setting> settings = new ArrayList<>();
 
-
     public PlayerData(UUID uuid) {
         this.uuid = uuid;
         this.name = Bukkit.getOfflinePlayer(uuid).getName();

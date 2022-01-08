@@ -1,5 +1,6 @@
 package club.frozed.frozedsg.utils.board;
 
+import club.frozed.frozedsg.PotSG;
 import lombok.Getter;
 import club.frozed.frozedsg.utils.Symbols;
 import org.bukkit.ChatColor;
@@ -26,7 +27,6 @@ public class Board {
 	private Objective objective;
 	private Objective healthName;
 
-
 	public Board(JavaPlugin plugin, Player player, BoardAdapter adapter) {
 		this.adapter = adapter;
 		this.player = player;
@@ -46,8 +46,10 @@ public class Board {
 		this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 		this.objective.setDisplayName(this.adapter.getTitle(player));
 
-		(healthName = getOrCreateObjective(scoreboard, "healthName", "health")).setDisplaySlot(DisplaySlot.BELOW_NAME);
-		healthName.setDisplayName(ChatColor.RED + Symbols.HEALTH);
+		if (PotSG.getInstance().getConfiguration("config").getBoolean("BOOLEANS.HEALTH-NAMETAG")) {
+			(healthName = getOrCreateObjective(scoreboard, "healthName", "health")).setDisplaySlot(DisplaySlot.BELOW_NAME);
+			healthName.setDisplayName(ChatColor.RED + Symbols.HEALTH);
+		}
 	}
 
 	public String getNewKey(BoardEntry entry) {
