@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="GoodestSG-NoInjectedDepends-:jar">
-    <output-path>$PROJECT_DIR$/compilation/testing</output-path>
-    <root id="archive" name="GoodestSG-NoInjectedDepends.jar">
-      <element id="module-output" name="FrozedSG" />
-    </root>
-  </artifact>
-</component>
