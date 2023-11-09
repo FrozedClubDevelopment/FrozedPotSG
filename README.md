@@ -1,6 +1,9 @@
 # FrozedSG
 MMC/MineHQ/Lunar PotSG Replica
 
+## Disclaimer
+This is all old and outdated code from before 2019. I might recode it eventually just for showcase purposes...
+
 ## Requirements
 - Java 8
 - MongoDB
